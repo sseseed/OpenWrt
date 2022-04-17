@@ -34,6 +34,7 @@ jobs:
     - name: Update feeds
       run: |
         wget https://github.com/openwrt/openwrt/archive/refs/tags/v21.02.2.tar.gz
+        mkdir /opt/openwrt
         tar -zxvf v21.02.2.tar.gz /opt/openwrt
         #git clone --depth=1 https://github.com/openwrt/openwrt/tree/openwrt-21.02 /opt/openwrt
         cd /opt/openwrt
