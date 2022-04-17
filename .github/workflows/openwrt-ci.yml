@@ -97,11 +97,9 @@ jobs:
         name: OpenWrt_firmware
         path: ./bin/targets/
 
-    - name: Upload release asset
-      if: github.event == 'release'
-      uses: svenstaro/upload-release-action@v2
+    - name : Upload packages
+      uses: actions/upload-artifact@master
+      if: always()
       with:
-        repo_token: ${{ secrets.YOURTOKEN }}
+        name: Padavan-packages
         file: ./artifact/firmware/*
-        tag: ${{ github.ref }}
-        file_glob: true
