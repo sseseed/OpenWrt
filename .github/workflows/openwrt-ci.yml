@@ -40,9 +40,9 @@ jobs:
           #git clone https://github.com/openwrt/openwrt/tree/v21.02.2
           wget https://github.com/openwrt/openwrt/archive/refs/tags/v21.02.2.tar.gz
           tar -zxvf v21.02.2.tar.gz
+          cp .config ./openwrt-21.02.2/.config
+          mv ./openwrt-21.02.2/* ./
           cd openwrt-21.02.2
-          cp .config ./lede/.config
-          mv ./lede/* ./
       #- name: Install Helloword
         #run: |
           #echo "src-git helloworld https://github.com/fw876/helloworld" >> ./feeds.conf.default 
