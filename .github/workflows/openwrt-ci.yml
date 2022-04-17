@@ -33,7 +33,7 @@ jobs:
         
     - name: Update feeds
       run: |
-        git checkout v21.02.2 --depth=1 https://github.com/openwrt/openwrt/blob/openwrt-21.02 /opt/openwrt    
+        git checkout v21.02.2 https://github.com/openwrt/openwrt /opt/openwrt    
         #git clone --depth=1 https://github.com/openwrt/openwrt/blob/openwrt-21.02 /opt/openwrt    
         cd /opt/openwrt
         ./scripts/feeds update -a
