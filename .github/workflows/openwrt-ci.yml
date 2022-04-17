@@ -40,7 +40,7 @@ jobs:
         ls
         tar -zxvf v21.02.2.tar.gz
         #git clone --depth=1 https://github.com/openwrt/openwrt/tree/openwrt-21.02 /opt/openwrt
-        cd /opt/openwrt
+        cd /opt/openwrt/openwrt-21.02.2
         ./scripts/feeds update -a
         ./scripts/feeds install -a
     - name: Generate configuration file
