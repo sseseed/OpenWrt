@@ -42,7 +42,7 @@ jobs:
           wget https://github.com/openwrt/openwrt/archive/refs/tags/v21.02.2.tar.gz
           tar -zxvf v21.02.2.tar.gz
           ls
-          cp -r ./target/linux/ramips/* ./openwrt-21.02.2/target/linux/ramips/
+          cp -r -f target/linux/ramips/ openwrt-21.02.2/target/linux/ramips
           #cp .config ./openwrt-21.02.2/.config
           
           mv ./openwrt-21.02.2/* ./
