@@ -48,12 +48,12 @@ jobs:
           pwd
           ls
           echo aaaaa
-          cd openwrt-21.02.2
-          ls
           cat .config
+          cp .config ./openwrt-21.02.2/.config
+          cd openwrt-21.02.2
           #cp -r * /home/runner/work/OpenWrt/OpenWrt/openwrt-21.02.2/target/
           #cd /home/runner/work/OpenWrt/OpenWrt
-          #cp .config ./openwrt-21.02.2/.config
+          
       #- name: Install Helloword
         #run: |
           #echo "src-git helloworld https://github.com/fw876/helloworld" >> ./feeds.conf.default 
