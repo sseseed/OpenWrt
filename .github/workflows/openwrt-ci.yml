@@ -41,15 +41,16 @@ jobs:
           #git clone https://github.com/openwrt/openwrt/tree/v21.02.2
           wget https://github.com/openwrt/openwrt/archive/refs/tags/v21.02.2.tar.gz
           tar -zxvf v21.02.2.tar.gz
-          echo aaaaa
           pwd
           ls
-          echo aaaaa
           cp -r -f ./target/linux/ramips/ ./openwrt-21.02.2/target/linux/ramips
-          #cp .config ./openwrt-21.02.2/.config
           
-          mv ./openwrt-21.02.2/* ./
+          cp .config ./openwrt-21.02.2/.config
+          
+          #mv ./openwrt-21.02.2/* ./
+          ls
           cd openwrt-21.02.2
+          pwd
       #- name: Install Helloword
         #run: |
           #echo "src-git helloworld https://github.com/fw876/helloworld" >> ./feeds.conf.default 
