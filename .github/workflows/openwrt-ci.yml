@@ -46,7 +46,7 @@ jobs:
           cp -r -f ./target/linux/ramips/ ./openwrt-21.02.2/target/linux/ramips
           ls ./openwrt-21.02.2/target/linux/ramips | grep GL-
           cp .config ./openwrt-21.02.2/.config
-          mv -f ./openwrt-21.02.2/* ./
+          #mv -f ./openwrt-21.02.2/* ./
       #- name: Install Helloword
         #run: |
           #echo "src-git helloworld https://github.com/fw876/helloworld" >> ./feeds.conf.default 
@@ -65,6 +65,8 @@ jobs:
           #popd
       - name: Update feeds
         run: |
+          cd openwrt-21.02.2
+          pwd
           ./scripts/feeds update -a
           ./scripts/feeds install -a
       - name: Costom configure file
