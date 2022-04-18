@@ -48,7 +48,7 @@ jobs:
           cp -r /home/runner/work/OpenWrt/OpenWrt/target/* /home/runner/work/OpenWrt/OpenWrt/openwrt-21.02.2/target
           pwd
           rm -rf target
-          cp jotale_js76x8-8m.config ./openwrt-21.02.2/.config
+          cp .config ./openwrt-21.02.2/.config
           mv ./openwrt-21.02.2/* ./
           
           
