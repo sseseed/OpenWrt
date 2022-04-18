@@ -48,7 +48,6 @@ jobs:
           cd /home/runner/work/OpenWrt/OpenWrt
           ls
           echo aaa
-          ls ./openwrt-21.02.2/target/linux/ramips | grep GL-
           cp .config ./openwrt-21.02.2/.config
           #mv -f ./openwrt-21.02.2/* ./
       #- name: Install Helloword
