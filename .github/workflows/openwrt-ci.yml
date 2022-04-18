@@ -43,19 +43,11 @@ jobs:
           tar -zxvf v21.02.2.tar.gz
           pwd
           ls
-          #ls /home/runner/work/OpenWrt/OpenWrt/target/linux/ramips | grep GL-
-          #echo aaa
-          #ls /home/runner/work/OpenWrt/OpenWrt/openwrt-21.02.2/target/linux/ramips  | grep GL-
           cd target
-          ls
-          echo aaa
-          cd dts
-          ls
-          echo aaa
+          cp -r * /home/runner/work/OpenWrt/OpenWrt/openwrt-21.02.2/target/
           cd /home/runner/work/OpenWrt/OpenWrt
           ls
           echo aaa
-          cp -rf target/linux/ramips/ ./openwrt-21.02.2/target/linux/ramips/
           ls ./openwrt-21.02.2/target/linux/ramips | grep GL-
           cp .config ./openwrt-21.02.2/.config
           #mv -f ./openwrt-21.02.2/* ./
