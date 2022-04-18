@@ -43,7 +43,7 @@ jobs:
           tar -zxvf v21.02.2.tar.gz
           pwd
           ls
-          cp -r -f ./target/linux/ramips/ ./openwrt-21.02.2/target/linux/ramips
+          cp -rf ./target/linux/ramips/ ./openwrt-21.02.2/target/linux/ramips
           ls ./openwrt-21.02.2/target/linux/ramips | grep GL-
           cp .config ./openwrt-21.02.2/.config
           #mv -f ./openwrt-21.02.2/* ./
