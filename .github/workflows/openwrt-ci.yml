@@ -48,6 +48,7 @@ jobs:
           echo aaaaa
           cd openwrt-21.02.2
           ls
+          cat .config
           #cp -r * /home/runner/work/OpenWrt/OpenWrt/openwrt-21.02.2/target/
           #cd /home/runner/work/OpenWrt/OpenWrt
           #cp .config ./openwrt-21.02.2/.config
