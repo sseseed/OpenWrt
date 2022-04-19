@@ -50,11 +50,11 @@ jobs:
           rm -rf target
           cp .config ./openwrt-21.02.2/.config
           mv ./openwrt-21.02.2/* ./
+          echo -------------------------
           ls
-          echo aaaaa
-          ls target/linux/ramips/dts/mt7628an_asus_rt-ac1200.dts
-          echo aaaaa
+          echo -------------------------
           ls target/linux/ramips/dts
+          echo -------------------------
           exit 0
           
       #- name: Install Helloword
