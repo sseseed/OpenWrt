@@ -268,12 +268,12 @@ define Device/iptime_a604m
 endef
 TARGET_DEVICES += iptime_a604m
 
-define Device/SSE_GL-FE-AP
+define Device/sse_gl_fe_ap
   DEVICE_VENDOR := SSE
   DEVICE_MODEL := GL-FE-AP
   IMAGE_SIZE := 7872k
 endef
-TARGET_DEVICES += SSE_GL-FE-AP
+TARGET_DEVICES += sse_gl_fe_ap
 
 define Device/jotale_js76x8
   DEVICE_VENDOR := Jotale
