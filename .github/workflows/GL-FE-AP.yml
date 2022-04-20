@@ -70,7 +70,7 @@ jobs:
           #popd
       - name: Update feeds
         run: |
-          ./scripts/feeds update -a
+          #./scripts/feeds update -a
           ./scripts/feeds install -a
           ./scripts/feeds install -a -p luci
       - name: Costom configure file
