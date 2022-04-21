@@ -75,9 +75,8 @@ jobs:
           ./scripts/feeds install -a
       - name: Costom configure file
         run: |
-          make defconfig
+          #make defconfig
           cat .config
-          exit 1
       - name: Download package source code
         run: |
           make download -j8
