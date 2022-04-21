@@ -50,8 +50,8 @@ jobs:
           rm -rf target
           cp .config ./openwrt-21.02.2/.config
           mv ./openwrt-21.02.2/* ./
-          cat .config
-          ls target/linux/ramips/dts/mt7628an_SSE_GL-FE-AP.dts
+          #修改 root 密码为 GL-FE-AProot
+          sed -i 's/root::0:0:99999:7:::/root:$1$k4M.ZHV1$rzEKCtrJEYPr0qwH..pzl/:19103:0:99999:7:::/' ./package/base-files/files/etc/shadow
           
       #- name: Install Helloword
         #run: |
