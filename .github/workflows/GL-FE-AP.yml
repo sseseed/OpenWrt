@@ -49,7 +49,7 @@ jobs:
           pwd
           rm -rf target
           #cp .config ./openwrt-21.02.2/.config
-          mv .config 2.config
+          #mv .config 2.config
           mv ./openwrt-21.02.2/* ./
           #修改 root 密码为 GL-FE-AProot
           sed -i 's/root::0:0:99999:7:::/root:$1$k4M.ZHV1$rzEKCtrJEYPr0qwH..pzl\/:19103:0:99999:7:::/' ./package/base-files/files/etc/shadow
@@ -73,8 +73,6 @@ jobs:
         run: |
           ./scripts/feeds update -a
           ./scripts/feeds install -a
-          mv 2.config .config
-          cat .config
       - name: Costom configure file
         run: |
           make defconfig
