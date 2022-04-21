@@ -50,6 +50,7 @@ jobs:
           rm -rf target
           cp .config ./openwrt-21.02.2/.config
           mv ./openwrt-21.02.2/* ./
+          cat .config
           ls target/linux/ramips/dts/mt7628an_SSE_GL-FE-AP.dts
           
       #- name: Install Helloword
