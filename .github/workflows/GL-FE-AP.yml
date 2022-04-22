@@ -78,9 +78,14 @@ jobs:
           cat .config
           echo aaaaaa
           make defconfig
+          sed -i 's/# CONFIG_PACKAGE_ttyd is not set/CONFIG_PACKAGE_ttyd=y/' .config
+          sed -i 's/# CONFIG_PACKAGE_luci is not set/CONFIG_PACKAGE_luci=y/' .config
+          #sed -i 's///' .config
+          
+
           cat .config
           echo aaaaaa
-          exit 1
+          
       - name: Download package source code
         run: |
           make download -j8
