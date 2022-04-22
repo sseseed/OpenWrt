@@ -49,6 +49,7 @@ jobs:
           pwd
           rm -rf target
           mv ./openwrt-21.02.2/* ./
+          mv 2.config .config
           #修改 root 密码为 GL-FE-AProot
           sed -i 's/root::0:0:99999:7:::/root:$1$k4M.ZHV1$rzEKCtrJEYPr0qwH..pzl\/:19103:0:99999:7:::/' ./package/base-files/files/etc/shadow
       #- name: Install Helloword
@@ -73,8 +74,12 @@ jobs:
           ./scripts/feeds install -a
       - name: Costom configure file
         run: |
-          #make defconfig
-          mv server.config .config
+          cat .config
+          echo aaaaaa
+          make defconfig
+          cat .config
+          echo aaaaaa
+          exit 1
       - name: Download package source code
         run: |
           make download -j8
