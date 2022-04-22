@@ -48,10 +48,10 @@ jobs:
           cp -r /home/runner/work/OpenWrt/OpenWrt/target/* /home/runner/work/OpenWrt/OpenWrt/openwrt-21.02.2/target
           pwd
           rm -rf target
+          cp .config ./openwrt-21.02.2
           mv ./openwrt-21.02.2/* ./
           #修改 root 密码为 GL-FE-AProot
           sed -i 's/root::0:0:99999:7:::/root:$1$k4M.ZHV1$rzEKCtrJEYPr0qwH..pzl\/:19103:0:99999:7:::/' ./package/base-files/files/etc/shadow
-          cat .config
       #- name: Install Helloword
         #run: |
           #echo "src-git helloworld https://github.com/fw876/helloworld" >> ./feeds.conf.default 
