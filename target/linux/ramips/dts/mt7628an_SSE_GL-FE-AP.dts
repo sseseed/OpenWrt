@@ -11,7 +11,7 @@
 	aliases {
 		led-boot = &led_system;
 		led-failsafe = &led_system;
-		led-running = &led_system;
+		#led-running = &led_system;
 		led-upgrade = &led_system;
 	};
 
@@ -25,6 +25,21 @@
 		led_system: system {
 			label = "green:system";
 			gpios = <&gpio 11 GPIO_ACTIVE_LOW>;
+		};
+		
+		GPIO39{
+			label = "GPIO39";
+			gpios = <&gpio 39 GPIO_ACTIVE_HI>;
+		};
+		
+		GPIO40{
+			label = "GPIO40";
+			gpios = <&gpio 40 GPIO_ACTIVE_HI>;
+		};
+		
+		GPIO41{
+			label = "GPIO41";
+			gpios = <&gpio 41 GPIO_ACTIVE_HI>;
 		};
 	};
 
