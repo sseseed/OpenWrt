@@ -319,13 +319,12 @@ generate_static_system() {
 		add_list system.ntp.server='time2.cloud.tencent.com'
 		set network.lan.dns='223.6.6.6'
 		#设置 Run LED 默认闪烁
-		delete system .@led[0]
-		set system .@led[0]='led'
-		set system .@led[0].name='Run_Led’
-		set system .@led[0].sysfs=' green:system'
-		set system .@led[0].trigger='timer’
-		set system .@led[0].delayon='500’
-		set system .@led[0].delayoff='500’
+		set system.Run_Led='led'
+		set system.Run_Led.name='Run_Led'
+		set system.Run_Led.sysfs='green:system'
+		set system.Run_Led.trigger='timer'
+		set system.Run_Led.delayon='500'
+		set system.Run_Led.delayoff='500'
 	EOF
 
 	if json_is_a system object; then
