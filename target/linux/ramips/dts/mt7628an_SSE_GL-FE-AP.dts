@@ -56,7 +56,7 @@
 
 &state_default {
 	gpio {
-		groups = "refclk", "wdt", "wled_an";
+		groups = "refclk", "wdt", "wled_an", "p2led_an", "p3led_an", "p4led_an";
 		function = "gpio";
 	};
 };
