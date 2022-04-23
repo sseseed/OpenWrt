@@ -306,13 +306,26 @@ generate_static_system() {
 		set system.@system[-1].ttylogin='0'
 		set system.@system[-1].log_size='64'
 		set system.@system[-1].urandom_seed='0'
-
+		#设置时区
+		set system.@system[-1].zonename='Asia/Shanghai'
+		set system.@system[-1].timezone='CST-8'
+		
 		delete system.ntp
 		set system.ntp='timeserver'
 		set system.ntp.enabled='1'
 		set system.ntp.enable_server='0'
+		#设置 NTP 对时服务器、DNS 服务器
 		add_list system.ntp.server='ntp1.aliyun.com'
 		add_list system.ntp.server='time2.cloud.tencent.com'
+		set network.lan.dns='223.6.6.6'
+		#设置 Run LED 默认闪烁
+		delete system .@led[0]
+		set system .@led[0]='led'
+		set system .@led[0].name='Run_Led’
+		set system .@led[0].sysfs=' green:system'
+		set system .@led[0].trigger='timer’
+		set system .@led[0].delayon='500’
+		set system .@led[0].delayoff='500’
 	EOF
 
 	if json_is_a system object; then
@@ -374,14 +387,6 @@ generate_led() {
 	json_select led
 	json_select "$key"
 	json_get_vars name sysfs type trigger default
-	#设置 Run LED 默认闪烁
-	delete system .@led[0]
-	set system .@led[0]='led'
-	set system .@led[0].name='Run_Led’
-	set system .@led[0].sysfs=' green:system'
-	set system .@led[0].trigger='timer’
-	set system .@led[0].delayon='500’
-	set system .@led[0].delayoff='500’
 
 set system.$cfg.default='$default'
 	uci -q batch <<-EOF
