@@ -45,7 +45,8 @@ jobs:
           #git clone --depth=1 https://github.com/sseseed/OpenWrt.git /home/runner/work/OpenWrt/My-Openwrt
           #cp -r /home/runner/work/OpenWrt/My-Openwrt/* /home/runner/work/OpenWrt/OpenWrt/openwrt-21.02.2
           
-          cp -r /home/runner/work/OpenWrt/OpenWrt/* /home/runner/work/OpenWrt/OpenWrt/openwrt-21.02.2
+          cp -r /home/runner/work/OpenWrt/OpenWrt/target/* /home/runner/work/OpenWrt/OpenWrt/openwrt-21.02.2/target
+          cp -r /home/runner/work/OpenWrt/OpenWrt/package/* /home/runner/work/OpenWrt/OpenWrt/openwrt-21.02.2/package
           pwd
           rm -rf target
           rm -rf package
