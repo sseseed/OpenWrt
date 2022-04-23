@@ -24,7 +24,7 @@
 
 		led_system: system {
 			label = "green:system";
-			gpios = <&gpio 11 GPIO_ACTIVE_HIGH>;
+			gpios = <&gpio 11 GPIO_ACTIVE_LOW>;
 		};
 		
 		GPIO39{
@@ -48,7 +48,7 @@
 
 		reset {
 			label = "reset";
-			gpios = <&gpio 44 GPIO_ACTIVE_HIGH>;
+			gpios = <&gpio 44 GPIO_ACTIVE_LOW>;
 			linux,code = <KEY_RESTART>;
 		};
 	};
