@@ -323,8 +323,8 @@ generate_static_system() {
 		set system.Run_Led.name='Run_Led'
 		set system.Run_Led.sysfs='green:system'
 		set system.Run_Led.trigger='timer'
-		set system.Run_Led.delayon='500'
-		set system.Run_Led.delayoff='500'
+		set system.Run_Led.delayon='750'
+		set system.Run_Led.delayoff='750'
 	EOF
 
 	if json_is_a system object; then
