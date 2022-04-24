@@ -29,17 +29,17 @@
 		
 		GPIO39{
 			label = "GPIO39";
-			gpios = <&gpio 39 GPIO_ACTIVE_HIGH>;
+			gpios = <&gpio 39 GPIO_ACTIVE_LOW>;
 		};
 		
 		GPIO40{
 			label = "GPIO40";
-			gpios = <&gpio 40 GPIO_ACTIVE_HIGH>;
+			gpios = <&gpio 40 GPIO_ACTIVE_LOW>;
 		};
 		
 		GPIO41{
 			label = "GPIO41";
-			gpios = <&gpio 41 GPIO_ACTIVE_HIGH>;
+			gpios = <&gpio 41 GPIO_ACTIVE_LOW>;
 		};
 	};
 
@@ -56,7 +56,7 @@
 
 &state_default {
 	gpio {
-		groups = "refclk", "wdt", "wled_an", "p2led_an", "p3led_an", "p4led_an";
+		groups = "refclk", "wdt";
 		function = "gpio";
 	};
 };
