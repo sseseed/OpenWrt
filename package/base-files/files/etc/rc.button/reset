@@ -1,0 +1,31 @@
+#!/bin/sh
+
+. /lib/functions.sh
+
+OVERLAY="$( grep ' /overlay ' /proc/mounts )"
+
+case "$ACTION" in
+pressed)
+	[ -z "$OVERLAY" ] && return 0
+
+	return 5
+;;
+timeout)
+	. /etc/diag.sh
+	set_state failsafe
+;;
+released)
+	if [ "$SEEN" -ge 5 -a -n "$OVERLAY" ]
+	then
+		echo "FACTORY RESET" > /dev/console
+		#Set Run_Led 
+		echo "1" >/sys/class/leds/green:system/brightness
+		echo "timer" >/sys/class/leds/green:system/trigger
+		echo "80" >/sys/class/leds/green:system/delay_off
+		echo "80" >/sys/class/leds/green:system/delay_on
+		jffs2reset -y && reboot &
+	fi
+;;
+esac
+
+return 0
