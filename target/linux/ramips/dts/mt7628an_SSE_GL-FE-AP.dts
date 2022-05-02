@@ -16,7 +16,7 @@
 	};
 
 	chosen {
-		bootargs = "console=ttyS1,115200";
+		bootargs = "console=ttyS0,115200";
 	};
 
 	leds {
