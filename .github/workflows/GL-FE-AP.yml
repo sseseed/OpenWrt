@@ -77,7 +77,7 @@ jobs:
       - name: Costom configure file
         run: |
           rm .config
-          mv server.config .config
+          mv GL-FE-AP.config .config
           echo aaaaaa
           cat .config
           echo aaaaaa
