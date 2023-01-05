@@ -8,7 +8,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 # https://github.com/hackyes/OpenWrt-CI
 
-name: OpenWrt
+name: GL-FE-AP
 
 on:
   push:
