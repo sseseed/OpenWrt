@@ -38,20 +38,20 @@ jobs:
           sudo -E apt-get clean
       - name: Download Openwrt
         run: |
-          #git clone https://github.com/openwrt/openwrt/tree/v21.02.2
-          wget https://github.com/openwrt/openwrt/archive/refs/tags/v21.02.2.tar.gz
-          tar -zxvf v21.02.2.tar.gz
+          #git clone https://github.com/openwrt/openwrt/tree/v22.03.2
+          wget https://github.com/openwrt/openwrt/archive/refs/tags/v22.03.2.tar.gz
+          tar -zxvf v22.03.2.tar.gz
           # 
           #git clone --depth=1 https://github.com/sseseed/OpenWrt.git /home/runner/work/OpenWrt/My-Openwrt
-          #cp -r /home/runner/work/OpenWrt/My-Openwrt/* /home/runner/work/OpenWrt/OpenWrt/openwrt-21.02.2
+          #cp -r /home/runner/work/OpenWrt/My-Openwrt/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.2
           
-          cp -r /home/runner/work/OpenWrt/OpenWrt/target/* /home/runner/work/OpenWrt/OpenWrt/openwrt-21.02.2/target
-          #cp -r /home/runner/work/OpenWrt/OpenWrt/package/* /home/runner/work/OpenWrt/OpenWrt/openwrt-21.02.2/package
+          cp -r /home/runner/work/OpenWrt/OpenWrt/target/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.2/target
+          #cp -r /home/runner/work/OpenWrt/OpenWrt/package/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.2/package
           pwd
           rm -rf target
           rm -rf package
-          cp .config ./openwrt-21.02.2
-          mv ./openwrt-21.02.2/* ./
+          cp .config ./openwrt-22.03.2
+          mv ./openwrt-22.03.2/* ./
           #修改 root 密码为 GL-FE-AProot
           #sed -i 's/root::0:0:99999:7:::/root:$1$k4M.ZHV1$rzEKCtrJEYPr0qwH..pzl\/:19103:0:99999:7:::/' ./package/base-files/files/etc/shadow
       #- name: Install Helloword
