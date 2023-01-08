@@ -13,9 +13,7 @@ case "$board" in
 alfa-network,ap120c-ac)
 	ucidef_set_led_netdev "wan" "WAN" "amber:wan" "eth1"
 	;;
-rrys,LE1|\
 asus,rt-ac58u)
-
 	ucidef_set_led_netdev "wan" "WAN" "blue:wan" "eth1"
 	ucidef_set_led_switch "lan" "LAN" "blue:lan" "switch0" "0x1e"
 	;;
