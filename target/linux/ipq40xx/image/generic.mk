@@ -562,7 +562,7 @@ define Device/rrys_LE1
 	$(call Device/FitzImage)
 	DEVICE_VENDOR := rrys
 	DEVICE_MODEL := LE1
-	BOARD_NAME := LE1
+	BOARD_NAME := le1
 	SOC := qcom-ipq4019
 	KERNEL_SIZE := 4096k
 	IMAGE_SIZE := 26624k
