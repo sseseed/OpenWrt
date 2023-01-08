@@ -558,7 +558,7 @@ define Device/glinet_gl-ap1300
 endef
 TARGET_DEVICES += glinet_gl-ap1300
 
-define Device/rrys_LE1
+define Device/rrys_le1
 	$(call Device/FitzImage)
 	DEVICE_VENDOR := rrys
 	DEVICE_MODEL := LE1
@@ -568,7 +568,7 @@ define Device/rrys_LE1
 	IMAGE_SIZE := 26624k
 	IMAGE/sysupgrade.bin := append-kernel |append-rootfs | pad-rootfs | append-metadata
 endef
-TARGET_DEVICES += rrys_LE1
+TARGET_DEVICES += rrys_le1
 
 define Device/glinet_gl-b1300
 	$(call Device/FitzImage)
