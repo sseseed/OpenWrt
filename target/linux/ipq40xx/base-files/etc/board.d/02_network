@@ -48,7 +48,7 @@ ipq40xx_setup_interfaces()
 	openmesh,a62)
 		ucidef_set_interfaces_lan_wan "eth1" "eth0"
 		;;
-	rrys, LE1|\
+	rrys, le1|\
 	asus,rt-ac58u|\
 	mikrotik,hap-ac2|\
 	zyxel,nbg6617)
