@@ -238,10 +238,10 @@
 
 &wifi0 {
 	status = "okay";
-	qcom,ath10k-calibration-variant = "LE1";
+	qcom,ath10k-calibration-variant = "le1";
 };
 
 &wifi1 {
 	status = "okay";
-	qcom,ath10k-calibration-variant = "LE1";
+	qcom,ath10k-calibration-variant = "le1";
 };
