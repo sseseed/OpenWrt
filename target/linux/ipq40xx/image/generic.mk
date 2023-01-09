@@ -566,8 +566,8 @@ define Device/rrys_le1
 	KERNEL_SIZE := 4096k
 	IMAGE_SIZE := 31232k
 	IMAGE/sysupgrade.bin := append-kernel |append-rootfs | pad-rootfs | append-metadata
-  IMAGE/factory.bin := qsdk-ipq-factory-nor | check-size
-  DEVICE_PACKAGES := kmod-usb-ledtrig-usbport
+  	IMAGE/factory.bin := qsdk-ipq-factory-nor | check-size
+  	DEVICE_PACKAGES := kmod-usb-ledtrig-usbport
 endef
 TARGET_DEVICES += rrys_le1
 
