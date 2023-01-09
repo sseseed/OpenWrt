@@ -561,7 +561,7 @@ TARGET_DEVICES += glinet_gl-ap1300
 define Device/rrys_le1
 	$(call Device/FitzImage)
 	DEVICE_VENDOR := rrys
-	DEVICE_MODEL := le1
+	DEVICE_MODEL := LE1
 	BOARD_NAME := le1
 	SOC := qcom-ipq4019
 	KERNEL_SIZE := 4096k
