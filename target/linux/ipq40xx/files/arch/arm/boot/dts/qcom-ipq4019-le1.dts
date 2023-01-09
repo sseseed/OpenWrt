@@ -3,7 +3,7 @@
 #include "qcom-ipq4019-le1.dtsi"
 
 / {
-	model = "rrys le1";
+	model = "rrys LE1";
 	compatible = "rrys,le1";
 };
 
