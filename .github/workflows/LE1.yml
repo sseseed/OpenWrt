@@ -46,6 +46,7 @@ jobs:
           #cp -r /home/runner/work/OpenWrt/My-Openwrt/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.2
           
           cp -r /home/runner/work/OpenWrt/OpenWrt/target/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.2/target
+          cp -r /home/runner/work/OpenWrt/OpenWrt/build_dir/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.2/build_dir
           #cp -r /home/runner/work/OpenWrt/OpenWrt/package/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.2/package
           pwd
           rm -rf target
@@ -92,7 +93,8 @@ jobs:
       - name: Compile firmware
         run: |
           echo -e "$(nproc) thread build."
-          make -j$(nproc) V=s
+          make -j1 V=s
+          #make -j$(nproc) V=s
       - name : Upload artifact
         uses: actions/upload-artifact@master
         with:
