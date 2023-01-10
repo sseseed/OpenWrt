@@ -46,12 +46,12 @@ jobs:
           #cp -r /home/runner/work/OpenWrt/My-Openwrt/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.2
           
           cp -r /home/runner/work/OpenWrt/OpenWrt/target/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.2/target
-          mkdir /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.2/build_dir
           cp -r /home/runner/work/OpenWrt/OpenWrt/build_dir/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.2/build_dir
           #cp -r /home/runner/work/OpenWrt/OpenWrt/package/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.2/package
           pwd
           rm -rf target
           rm -rf package
+          rm -rf build_dir
           cp .config ./openwrt-22.03.2
           mv ./openwrt-22.03.2/* ./
           #修改 root 密码为 GL-FE-AProot
