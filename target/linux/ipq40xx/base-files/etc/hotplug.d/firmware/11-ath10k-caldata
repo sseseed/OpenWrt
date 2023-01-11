@@ -53,7 +53,7 @@ case "$FIRMWARE" in
 	8dev,habanero-dvk |\
 	8dev,jalapeno |\
 	alfa-network,ap120c-ac |\
-    rrys,LE1 |\
+    	rrys,le1 |\
 	cilab,meshpoint-one |\
 	ezviz,cs-w3-wd1200g-eup |\
 	glinet,gl-ap1300 |\
@@ -164,7 +164,7 @@ case "$FIRMWARE" in
 	8dev,jalapeno |\
 	alfa-network,ap120c-ac |\
 	cilab,meshpoint-one |\
-    rrys,LE1 |\
+    	rrys,le1 |\
 	ezviz,cs-w3-wd1200g-eup |\
 	glinet,gl-ap1300 |\
 	glinet,gl-b1300 |\
