@@ -132,6 +132,7 @@ ipq40xx_setup_macs()
 	local label_mac=""
 
 	case "$board" in
+	rrys,le1|\
 	8dev,habanero-dvk)
 		label_mac=$(mtd_get_mac_binary "ART" 0x1006)
 		;;
