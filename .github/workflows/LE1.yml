@@ -48,8 +48,8 @@ jobs:
           cp -r /home/runner/work/OpenWrt/OpenWrt/target/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.2/target
           ls /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.2/target/linux/ipq40xx/files/arch/arm/boot/dts/qcom-ipq4019-le1.*
           cp -r /home/runner/work/OpenWrt/OpenWrt/build_dir/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.2/build_dir
-          ls -r /home/runner/work/OpenWrt/OpenWrt/build_dir/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-rrys_le1-initramfs-fit-zImage.itb
-          ls -r /home/runner/work/OpenWrt/OpenWrt/build_dir/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-5.10.146/arch/arm/boot/dts/qcom-ipq4019-le1.dtb
+          ls -r /home/runner/work/OpenWrt/OpenWrt/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-rrys_le1-initramfs-fit-zImage.itb
+          ls -r /home/runner/work/OpenWrt/OpenWrt/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-5.10.146/arch/arm/boot/dts/qcom-ipq4019-le1.dtb
           #cp -r /home/runner/work/OpenWrt/OpenWrt/package/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.2/package
           pwd
           rm -rf target
