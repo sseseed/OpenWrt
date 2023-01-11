@@ -54,6 +54,11 @@ jobs:
           rm -rf build_dir
           cp .config ./openwrt-22.03.2
           mv ./openwrt-22.03.2/* ./
+          echo aaaaaaaaaa
+          ls build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-rrys_le1-initramfs-fit-zImage.itb
+          ls build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-5.10.146/arch/arm/boot/dts/qcom-ipq4019-le1.dtb
+          echo aaaaaaaaaa
+          exit
           #修改 root 密码为 GL-FE-AProot
           #sed -i 's/root::0:0:99999:7:::/root:$1$k4M.ZHV1$rzEKCtrJEYPr0qwH..pzl\/:19103:0:99999:7:::/' ./package/base-files/files/etc/shadow
       #- name: Install Helloword
@@ -94,7 +99,11 @@ jobs:
       - name: Compile firmware
         run: |
           echo -e "$(nproc) thread build."
-          make -j1 V=s
+          echo aaaaaaaaaa
+          ls build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-rrys_le1-initramfs-fit-zImage.itb
+          ls build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-5.10.146/arch/arm/boot/dts/qcom-ipq4019-le1.dtb
+          echo aaaaaaaaaa
+          make -j$(nproc) V=s
           #make -j$(nproc) V=s
       - name : Upload artifact
         uses: actions/upload-artifact@master
