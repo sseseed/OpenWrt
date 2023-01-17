@@ -137,9 +137,10 @@ ipq40xx_setup_macs()
 
 	case "$board" in
 	rrys,le1)
-		label_mac=$(mtd_get_mac_binary "ART" 0x6)
-		lan_mac="$label_mac"
-		wan_mac=$(macaddr_add $lan_mac 1)
+		label_mac=$(mtd_get_mac_binary "ART" 0x0)
+		#label_mac=$(mtd_get_mac_binary "ART" 0x6)
+		#lan_mac="$label_mac"
+		#wan_mac=$(macaddr_add $lan_mac 1)
 		;;
 	8dev,habanero-dvk)
 		label_mac=$(mtd_get_mac_binary "ART" 0x1006)
