@@ -15,7 +15,7 @@ ipq40xx_setup_interfaces()
 	rrys,le1)
 		ucidef_set_interfaces_lan_wan "eth0" "eth1"
 		ucidef_add_switch "switch0" \
-		"0t@eth0" "1:lan" "2:lan" "3:lan" "4:lan" "0t@eth1" "5:wan"
+		"0u@eth0" "1:lan" "2:lan" "3:lan" "4:lan" "0u@eth1" "5:wan"
 		;;
 	8dev,habanero-dvk|\
 	8dev,jalapeno|\
@@ -136,11 +136,13 @@ ipq40xx_setup_macs()
 	local label_mac=""
 
 	case "$board" in
-	rrys,le1|\
-	8dev,habanero-dvk)
-		lan_mac=$(mtd_get_mac_binary "ART" 0x6)
+	rrys,le1)
+		label_mac=$(mtd_get_mac_binary "ART" 0x6)
+		lan_mac="$label_mac"
 		wan_mac=$(macaddr_add $lan_mac 1)
-		label_mac="$lan_mac"
+		;;
+	8dev,habanero-dvk)
+		label_mac=$(mtd_get_mac_binary "ART" 0x1006)
 		;;
 	asus,rt-ac58u)
 		CI_UBIPART=UBI_DEV
