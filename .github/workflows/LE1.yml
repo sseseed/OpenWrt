@@ -79,6 +79,8 @@ jobs:
           ./scripts/feeds install -a
           #在 Luci 语言选择项上加上中文
           sed -i "s/config internal languages/config internal languages\n\toption zh_cn \'Chinese zh-cn\'/" ./feeds/luci/modules/luci-base/root/etc/config/luci
+          #默认为英文
+          sed -i "s/option lang auto/option lang en/" ./feeds/luci/modules/luci-base/root/etc/config/luci
           cat ./feeds/luci/modules/luci-base/root/etc/config/luci
       - name: Costom configure file
         run: |
