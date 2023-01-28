@@ -23,6 +23,21 @@ released)
 		echo "timer" >/sys/class/leds/green:system/trigger
 		echo "80" >/sys/class/leds/green:system/delay_off
 		echo "80" >/sys/class/leds/green:system/delay_on
+		#Set USB_Led
+		echo "1" >/sys/class/leds/green:usb/brightness
+		echo "timer" >/sys/class/leds/green:usb/trigger
+		echo "80" >/sys/class/leds/green:usb/delay_off
+		echo "80" >/sys/class/leds/green:usb/delay_on
+		#Set 2.4G_Led
+		echo "1" >/sys/class/leds/green:wlan2g/brightness
+		echo "timer" >/sys/class/leds/green:wlan2g/trigger
+		echo "80" >/sys/class/leds/green:wlan2g/delay_off
+		echo "80" >/sys/class/leds/green:wlan2g/delay_on
+		#Set 5.8G_Led
+		echo "1" >/sys/class/leds/green:wlan5g/brightness
+		echo "timer" >/sys/class/leds/green:wlan5g/trigger
+		echo "80" >/sys/class/leds/green:wlan5g/delay_off
+		echo "80" >/sys/class/leds/green:wlan5g/delay_on
 		jffs2reset -y && reboot &
 	fi
 ;;
