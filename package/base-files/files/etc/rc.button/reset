@@ -15,7 +15,12 @@ timeout)
 	set_state failsafe
 ;;
 released)
-	if [ "$SEEN" -ge 5 -a -n "$OVERLAY" ]
+	if [ "$SEEN" -lt 1 ]
+	then
+		echo "REBOOT" > /dev/console
+		sync
+		reboot
+	elif [ "$SEEN" -ge 5 -a -n "$OVERLAY" ]
 	then
 		echo "FACTORY RESET" > /dev/console
 		#Set Run_Led 
