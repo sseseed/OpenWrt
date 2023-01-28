@@ -48,7 +48,7 @@ jobs:
           
           cp -r /home/runner/work/OpenWrt/OpenWrt/target/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.2/target
           #cp -r /home/runner/work/OpenWrt/OpenWrt/build_dir/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.2/build_dir
-          #cp -r /home/runner/work/OpenWrt/OpenWrt/package/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.2/package
+          cp -r /home/runner/work/OpenWrt/OpenWrt/package/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.2/package
           pwd
           rm -rf target
           rm -rf package
