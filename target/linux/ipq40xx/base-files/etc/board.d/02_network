@@ -15,7 +15,7 @@ ipq40xx_setup_interfaces()
 	rrys,le1)
 		ucidef_set_interfaces_lan_wan "eth0" "eth1"
 		ucidef_add_switch "switch0" \
-		"0u@eth0" "1:lan" "2:lan" "3:lan" "4:lan" "0u@eth1" "5:wan"
+		"0u@eth0" "1:lan" "2:lan" "3:lan" "4:lan"
 		;;
 	8dev,habanero-dvk|\
 	8dev,jalapeno|\
@@ -137,10 +137,10 @@ ipq40xx_setup_macs()
 
 	case "$board" in
 	rrys,le1)
-		#label_mac=$(mtd_get_mac_binary "ART" 0x0)
 		label_mac=$(mtd_get_mac_binary "ART" 0x6)
-		lan_mac="$label_mac"
-		wan_mac=$(macaddr_add $lan_mac 1)
+		#label_mac=$(mtd_get_mac_binary "ART" 0x6)
+		#lan_mac="$label_mac"
+		#wan_mac=$(macaddr_add $lan_mac 1)
 		;;
 	8dev,habanero-dvk)
 		label_mac=$(mtd_get_mac_binary "ART" 0x1006)
