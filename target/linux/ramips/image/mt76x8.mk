@@ -220,6 +220,14 @@ define Device/SSE_GL-FE-AP
 endef
 TARGET_DEVICES += SSE_GL-FE-AP
 
+define Device/SSE_ZCM-MT7688
+  DEVICE_VENDOR := SSE
+  DEVICE_MODEL := ZCM-MT7688
+  IMAGE_SIZE := 7872k
+endef
+TARGET_DEVICES += SSE_ZCM-MT7688
+
+
 define Device/jotale_js76x8
   DEVICE_VENDOR := Jotale
   DEVICE_MODEL := JS76x8
