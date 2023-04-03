@@ -10,7 +10,7 @@
 # https://github.com/hackyes/OpenWrt-CI
 
 name: LE1
-
+# 人人影响视 LE1 IPQ4019
 on:
   push:
     branches: 
