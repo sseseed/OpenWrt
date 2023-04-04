@@ -108,7 +108,7 @@ ramips_setup_interfaces()
 		;;
 	SSE,ZCM-MT7688)
   	ucidef_add_switch "switch0" \
-			"0:lan:1" "1:lan:2" "2:lan:3" "3:lan:4" "5:lan:5" "6@eth0"
+			"0:wan" "1:lan" "6t@eth0"
 		;;
 	jotale,js76x8-8m|\
 	jotale,js76x8-16m|\
