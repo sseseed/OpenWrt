@@ -174,6 +174,13 @@ ramips_setup_macs()
 	local label_mac=""
 
 	case $board in
+	
+	SSE,GL-FE-AP|\
+	SSE,ZCM-MT7688)
+		label_mac=$(mtd_get_mac_binary factory 0x4)
+		lan_mac=$label_mac
+		wan_mac=$(macaddr_add "$lan_mac" 1)
+		;;
 	buffalo,wcr-1166ds)
 		local index="$(find_mtd_index "board_data")"
 		wan_mac="$(grep -m1 mac= "/dev/mtd${index}" | cut -d= -f2)"
@@ -212,7 +219,6 @@ ramips_setup_macs()
 	totolink,a3)
 		wan_mac=$(mtd_get_mac_binary u-boot 0x1fc40)
 		;;
-	SSE,GL-FE-AP|\
 	jotale,js76x8-8m|\
 	jotale,js76x8-16m|\
 	jotale,js76x8-32m|\
