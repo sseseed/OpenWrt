@@ -143,6 +143,7 @@ xiaomi,mi-router-cr6609)
 xiaomi,redmi-router-ac2100)
 	ucidef_set_led_netdev "wan" "wan" "white:wan" "wan"
 	;;
+raisecom,msg1500|\
 youhua,wr1200js)
 	ucidef_set_led_netdev "internet" "INTERNET" "green:wan" "wan"
 	;;
