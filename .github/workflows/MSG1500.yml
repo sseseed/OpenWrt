@@ -9,8 +9,8 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 # https://github.com/hackyes/OpenWrt-CI
 
-name: ZCM-MT7688
-# 招财喵 MT7688，16M+64M
+name: MSG1500
+# MSG1500 MT7621，16M+64M
 on:
   push:
     branches: 
@@ -40,21 +40,17 @@ jobs:
       - name: Download Openwrt
         run: |
           #git clone https://github.com/openwrt/openwrt/tree/v22.03.2
-          wget https://github.com/openwrt/openwrt/archive/refs/tags/v22.03.2.tar.gz
-          tar -zxvf v22.03.2.tar.gz
-          # 
-          #git clone --depth=1 https://github.com/sseseed/OpenWrt.git /home/runner/work/OpenWrt/My-Openwrt
-          #cp -r /home/runner/work/OpenWrt/My-Openwrt/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.2
+          wget https://github.com/openwrt/openwrt/archive/refs/tags/v22.03.4.tar.gz
+          tar -zxvf v22.03.4.tar.gz
           
-          cp -r /home/runner/work/OpenWrt/OpenWrt/target/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.2/target
-          #cp -r /home/runner/work/OpenWrt/OpenWrt/build_dir/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.2/build_dir
-          cp -r /home/runner/work/OpenWrt/OpenWrt/package/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.2/package
+          cp -r /home/runner/work/OpenWrt/OpenWrt/target/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/target
+          cp -r /home/runner/work/OpenWrt/OpenWrt/package/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package
           pwd
           rm -rf target
           rm -rf package
           rm -rf build_dir
-          cp .config ./openwrt-22.03.2
-          mv ./openwrt-22.03.2/* ./
+          cp .config ./openwrt-22.03.4
+          mv ./openwrt-22.03.4/* ./
           #修改 root 密码为 GL-FE-AProot
           #sed -i 's/root::0:0:99999:7:::/root:$1$k4M.ZHV1$rzEKCtrJEYPr0qwH..pzl\/:19103:0:99999:7:::/' ./package/base-files/files/etc/shadow
       #- name: Install Helloword
@@ -85,7 +81,7 @@ jobs:
       - name: Costom configure file
         run: |
           rm .config
-          mv ZCM-MT7688.config .config
+          mv MSG1500.config .config
           echo aaaaaa
           cat .config
           echo aaaaaa
