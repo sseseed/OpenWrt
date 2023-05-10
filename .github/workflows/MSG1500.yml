@@ -82,12 +82,12 @@ jobs:
         run: |
           rm .config
           mv MSG1500.config .config
-          echo aaaaaa
-          cat .config
-          echo aaaaaa
+          #echo aaaaaa
+          #cat .config
+          #echo aaaaaa
           make defconfig
-          cat .config
-          echo aaaaaa
+          #cat .config
+          #echo aaaaaa
       - name: Download package source code
         run: |
           make download -j8
