@@ -24,7 +24,7 @@
 		led_usb: usb {
 			label = "green:usb";
 			gpios = <&gpio 7 GPIO_ACTIVE_LOW>;
-			trigger-sources = <&ehci_port2>;
+			trigger-sources = <&xhci_ehci_port1>, <&ehci_port2>;
 			linux,default-trigger = "usbport";
 		};
 		
@@ -32,6 +32,19 @@
 			label = "green:internet";
 			gpios = <&gpio 10 GPIO_ACTIVE_LOW>;
 		};
+		
+		wlan2g {
+			label = "blue:wlan2g";
+			gpios = <&gpio 4 GPIO_ACTIVE_LOW>;
+			linux,default-trigger = "phy0radio";
+		};
+
+		wlan5g {
+			label = "blue:wlan5g";
+			gpios = <&gpio 3 GPIO_ACTIVE_LOW>;
+			linux,default-trigger = "phy1radio";
+		};
+
 	};
 
 	keys {
@@ -95,10 +108,6 @@
 		reg = <0x0 0 0 0 0>;
 		mediatek,mtd-eeprom = <&factory 0x8000>;
 		ieee80211-freq-limit = <5000000 6000000>;
-		
-		led {
-			led-active-low;
-		};
 	};
 };
 
@@ -108,10 +117,6 @@
 		reg = <0x0 0 0 0 0>;
 		mediatek,mtd-eeprom = <&factory 0x0>;
 		ieee80211-freq-limit = <2400000 2500000>;
-
-		led {
-			led-active-low;
-		};
 	};
 };
 
