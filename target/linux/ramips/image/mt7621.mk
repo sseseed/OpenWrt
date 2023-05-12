@@ -1513,7 +1513,7 @@ define Device/raisecom_msg1500-switch
   $(Device/dsa-migration)
   IMAGE_SIZE := 16064k
   DEVICE_VENDOR := RAISECOM
-  DEVICE_MODEL := MSG1500
+  DEVICE_MODEL := MSG1500-switch
   DEVICE_PACKAGES := kmod-usb2 \
 	kmod-usb-ledtrig-usbport
 endef
