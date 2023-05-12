@@ -1509,6 +1509,15 @@ define Device/raisecom_msg1500
 endef
 TARGET_DEVICES += raisecom_msg1500
 
+define Device/raisecom_msg1500-switch
+  $(Device/dsa-migration)
+  IMAGE_SIZE := 16064k
+  DEVICE_VENDOR := RAISECOM
+  DEVICE_MODEL := MSG1500
+  DEVICE_PACKAGES := kmod-usb2 \
+	kmod-usb-ledtrig-usbport
+endef
+TARGET_DEVICES += raisecom_msg1500-switch
 
 define Device/raisecom_msg1500-x-00
   $(Device/dsa-migration)
