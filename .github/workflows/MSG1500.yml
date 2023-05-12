@@ -46,13 +46,6 @@ jobs:
           cp -r /home/runner/work/OpenWrt/OpenWrt/target/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/target
           cp -r /home/runner/work/OpenWrt/OpenWrt/package/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package
           
-          #修改 SSH 欢迎信息
-          rm /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/etc/banner
-          echo "-----------------------------------------------------" > /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/etc/banner
-          echo "BeiAn Router %V, %C" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/etc/banner
-          echo $(date +%F%n%T) >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/etc/banner
-          echo "-----------------------------------------------------" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/etc/banner
-          
           rm -rf target
           rm -rf package
           rm -rf build_dir
