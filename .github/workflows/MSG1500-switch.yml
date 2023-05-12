@@ -9,7 +9,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 # https://github.com/hackyes/OpenWrt-CI
 
-name: MSG1500
+name: MSG1500-switch
 # MSG1500-switch 全交换机模式，wan 口转为 lan5 口 MT7621，16M+64M
 on:
   push:
