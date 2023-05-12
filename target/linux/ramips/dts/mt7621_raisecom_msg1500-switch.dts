@@ -109,7 +109,7 @@
 
 		port@4 {
 			status = "okay";
-			label = "lan";
+			label = "lan5";
 		};
 	};
 };
@@ -128,9 +128,5 @@
 
 	macaddr_factory_e000: macaddr@e000 {
 		reg = <0xe000 0x6>;
-	};
-
-	macaddr_factory_e006: macaddr@e006 {
-		reg = <0xe006 0x6>;
 	};
 };
