@@ -43,6 +43,14 @@ jobs:
           wget https://github.com/openwrt/openwrt/archive/refs/tags/v22.03.4.tar.gz
           tar -zxvf v22.03.4.tar.gz
           
+          #取消设置 Run_Led
+          sed -i "s/set system.Run_Led='led'//" /home/runner/work/OpenWrt/OpenWrt/package/base-files/files/bin/config_generate
+          sed -i "s/set system.Run_Led.name='Run_Led'//" /home/runner/work/OpenWrt/OpenWrt/package/base-files/files/bin/config_generate
+          sed -i "s/set system.Run_Led.sysfs='green:system'//" /home/runner/work/OpenWrt/OpenWrt/package/base-files/files/bin/config_generate
+          sed -i "s/set system.Run_Led.trigger='timer'//" /home/runner/work/OpenWrt/OpenWrt/package/base-files/files/bin/config_generate
+          sed -i "s/set system.Run_Led.delayon='750'//" /home/runner/work/OpenWrt/OpenWrt/package/base-files/files/bin/config_generate
+          sed -i "s/set system.Run_Led.delayoff='750'//" /home/runner/work/OpenWrt/OpenWrt/package/base-files/files/bin/config_generate
+          
           cp -r /home/runner/work/OpenWrt/OpenWrt/target/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/target
           cp -r /home/runner/work/OpenWrt/OpenWrt/package/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package
           
