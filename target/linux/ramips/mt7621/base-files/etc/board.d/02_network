@@ -80,9 +80,6 @@ ramips_setup_interfaces()
 	mikrotik,routerboard-750gr3)
 		ucidef_set_interfaces_lan_wan "lan2 lan3 lan4 lan5" "wan"
 		;;
-	raisecom,msg1500-switch)
-		ucidef_set_interface_lan "lan1 lan2 lan3 lan4 lan5"
-		;;
 	mikrotik,routerboard-760igs)
 		ucidef_set_interfaces_lan_wan "lan2 lan3 lan4 lan5" "wan sfp"
 		;;
@@ -99,6 +96,7 @@ ramips_setup_interfaces()
 	ubnt,edgerouter-x-sfp)
 		ucidef_set_interfaces_lan_wan "eth1 eth2 eth3 eth4 eth5" "eth0"
 		;;
+	raisecom,msg1500-switch|\
 	ubnt,usw-flex)
 		ucidef_set_interface_lan "lan1 lan2 lan3 lan4 lan5"
 		;;
