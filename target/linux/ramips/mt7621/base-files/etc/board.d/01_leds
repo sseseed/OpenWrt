@@ -144,10 +144,10 @@ xiaomi,redmi-router-ac2100)
 	ucidef_set_led_netdev "wan" "wan" "white:wan" "wan"
 	;;
 raisecom,msg1500)
-	ucidef_set_led_netdev "wan" "wan" "green:wan" "wan"
+	ucidef_set_led_netdev "wan" "wan" "green:wan" "wan" "link tx rx"
 	;;
 raisecom,msg1500-switch)
-	ucidef_set_led_netdev "lan" "LAN link" "green:lan" "br-lan" "link tx rx"
+	ucidef_set_led_netdev "lan" "lan" "green:lan" "br-lan" "link tx rx"
 	;;
 youhua,wr1200js)
 	ucidef_set_led_netdev "internet" "INTERNET" "green:wan" "wan"
