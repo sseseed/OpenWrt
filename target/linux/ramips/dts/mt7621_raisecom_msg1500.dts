@@ -28,8 +28,8 @@
 			linux,default-trigger = "usbport";
 		};
 		
-		internet {
-			label = "green:internet";
+		led_wan {
+			label = "green:wan";
 			gpios = <&gpio 10 GPIO_ACTIVE_LOW>;
 		};
 	};
