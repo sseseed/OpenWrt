@@ -53,6 +53,14 @@ jobs:
           mv ./openwrt-22.03.4/* ./
           #修改 root 密码为 GL-FE-AProot
           #sed -i 's/root::0:0:99999:7:::/root:$1$k4M.ZHV1$rzEKCtrJEYPr0qwH..pzl\/:19103:0:99999:7:::/' ./package/base-files/files/etc/shadow
+          
+          #取消设置 Run_Led
+          sed -i "s/set system.Run_Led='led'//" /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          sed -i "s/set system.Run_Led.name='Run_Led'//" /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          sed -i "s/set system.Run_Led.sysfs='green:system'//" /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          sed -i "s/set system.Run_Led.trigger='timer'//" /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          sed -i "s/set system.Run_Led.delayon='750'//" /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          sed -i "s/set system.Run_Led.delayoff='750'//" /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
       #- name: Install Helloword
         #run: |
           #echo "src-git helloworld https://github.com/fw876/helloworld" >> ./feeds.conf.default 
