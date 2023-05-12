@@ -6,8 +6,8 @@
 #include <dt-bindings/input/input.h>
 
 / {
-	compatible = "raisecom,msg1500(switch)", "mediatek,mt7621-soc";
-	model = "RAISECOM MSG1500(switch)";
+	compatible = "raisecom,msg1500-switch", "mediatek,mt7621-soc";
+	model = "RAISECOM MSG1500-switch";
 
 	aliases {
 		led-boot = &led_usb;
