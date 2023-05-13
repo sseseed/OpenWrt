@@ -46,7 +46,7 @@ jobs:
           #启用 VLAN 并添加 VLAN1
           #先删除最后一行的 uci commit
           sed -i "s/uci commit//" /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
-          echo "if [ $name==raisecom,msg1500-switch ]; then" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "if [ \$name==raisecom,msg1500-switch ]; then" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           #启用 VLAN          
           echo "	uci set network.@interface[1].vlan_filtering='1'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           #添加 VLAN1 并加入所有接口
@@ -71,12 +71,9 @@ jobs:
           echo "add_list system.ntp.server='time2.cloud.tencent.com'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           echo "set network.lan.dns='223.6.6.6'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           echo "add_list network.lan.dns='180.76.76.76'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
-          
+          #应用设置
           echo "uci commit" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           
-          
-          cat /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
-          exit 0
           cp -r /home/runner/work/OpenWrt/OpenWrt/target/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/target
           cp -r /home/runner/work/OpenWrt/OpenWrt/package/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package
           
