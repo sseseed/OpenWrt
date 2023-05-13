@@ -42,14 +42,41 @@ jobs:
           #git clone https://github.com/openwrt/openwrt/tree/v22.03.2
           wget https://github.com/openwrt/openwrt/archive/refs/tags/v22.03.4.tar.gz
           tar -zxvf v22.03.4.tar.gz
-          #取消设置 Run_Led
-          sed -i "s/set system.Run_Led='led'//" /home/runner/work/OpenWrt/OpenWrt/package/base-files/files/bin/config_generate
-          sed -i "s/set system.Run_Led.name='Run_Led'//" /home/runner/work/OpenWrt/OpenWrt/package/base-files/files/bin/config_generate
-          sed -i "s/set system.Run_Led.sysfs='green:system'//" /home/runner/work/OpenWrt/OpenWrt/package/base-files/files/bin/config_generate
-          sed -i "s/set system.Run_Led.trigger='timer'//" /home/runner/work/OpenWrt/OpenWrt/package/base-files/files/bin/config_generate
-          sed -i "s/set system.Run_Led.delayon='750'//" /home/runner/work/OpenWrt/OpenWrt/package/base-files/files/bin/config_generate
-          sed -i "s/set system.Run_Led.delayoff='750'//" /home/runner/work/OpenWrt/OpenWrt/package/base-files/files/bin/config_generate
           
+          #启用 VLAN 并添加 VLAN1
+          #先删除最后一行的 uci commit
+          sed -i "s/uci commit//" /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "if [ $name==raisecom,msg1500-switch ]; then" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          #启用 VLAN          
+          echo "	uci set network.@interface[1].vlan_filtering='1'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          #添加 VLAN1 并加入所有接口
+          echo "	uci add network bridge-vlan" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "	uci set network.@bridge-vlan[-1].device='br-lan'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "	uci set network.@bridge-vlan[-1].vlan='1'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "	uci add_list network.@bridge-vlan[-1].ports='lan1:u*'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "	uci add_list network.@bridge-vlan[-1].ports='lan2:u*'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "	uci add_list network.@bridge-vlan[-1].ports='lan3:u*'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "	uci add_list network.@bridge-vlan[-1].ports='lan4:u*'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "	uci add_list network.@bridge-vlan[-1].ports='lan5:u*'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          #修改原 br-lan 桥的设备为 br-lan.1" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "	uci set network.lan.device='br-lan.1'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "fi" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          
+          #设置时区
+          echo "set system.@system[-1].zonename='Asia/Shanghai'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "set system.@system[-1].timezone='CST-8'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+
+          #设置 NTP 对时服务器、DNS 服务器
+          echo "add_list system.ntp.server='ntp1.aliyun.com'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "add_list system.ntp.server='time2.cloud.tencent.com'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "set network.lan.dns='223.6.6.6'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "add_list network.lan.dns='180.76.76.76'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          
+          echo "uci commit" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          
+          
+          cat /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          exit 0
           cp -r /home/runner/work/OpenWrt/OpenWrt/target/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/target
           cp -r /home/runner/work/OpenWrt/OpenWrt/package/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package
           
