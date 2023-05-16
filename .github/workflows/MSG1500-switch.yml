@@ -75,12 +75,12 @@ jobs:
           echo "uci commit" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           #初始化防火墙配置
           echo "echo \"config defaults\" > /etc/config/firewall\"" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
-          echo "echo \"\toption input 'ACCEPT'\" >> \/etc\/config\/firewall\"" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
-          echo "echo \"\toption output 'ACCEPT'\" >> \/etc\/config\/firewall\"" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
-          echo "echo \"\toption synflood_protect '1'\" >> \/etc\/config\/firewall\"" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
-          echo "echo \"\toption forward 'ACCEPT'\" >> \/etc\/config\/firewall\"" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
-          echo "echo \"\toption flow_offloading '1'\" >> \/etc\/config\/firewall\"" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
-          echo "echo \"\toption flow_offloading_hw '1'\" >> \/etc\/config\/firewall\"" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "echo \"\toption input 'ACCEPT'\" >> /etc/config/firewall\"" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "echo \"\toption output 'ACCEPT'\" >> /etc/config/firewall\"" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "echo \"\toption synflood_protect '1'\" >> /etc/config/firewall\"" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "echo \"\toption forward 'ACCEPT'\" >> /etc/config/firewall\"" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "echo \"\toption flow_offloading '1'\" >> /etc/config/firewall\"" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "echo \"\toption flow_offloading_hw '1'\" >> /etc/config/firewall\"" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           cat /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           cp -r /home/runner/work/OpenWrt/OpenWrt/target/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/target
           cp -r /home/runner/work/OpenWrt/OpenWrt/package/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package
