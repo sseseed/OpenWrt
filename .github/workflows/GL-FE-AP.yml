@@ -44,11 +44,13 @@ jobs:
           
           #先删除最后一行的 uci commit
           sed -i "s/uci commit//" /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "uci -q batch <<-EOF" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           #设置时区
           echo "set system.@system[-1].zonename='Asia/Shanghai'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           echo "set system.@system[-1].timezone='CST-8'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
 
           #设置 NTP 对时服务器、DNS 服务器
+          echo "delete system.ntp.server" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           echo "add_list system.ntp.server='ntp1.aliyun.com'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           echo "add_list system.ntp.server='time2.cloud.tencent.com'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           echo "set network.lan.dns='223.6.6.6'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
@@ -60,6 +62,7 @@ jobs:
           echo "set system.Run_Led.trigger='timer'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           echo "set system.Run_Led.delayon='750'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           echo "set system.Run_Led.delayoff='750'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "EOF" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           #应用设置
           echo "uci commit" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           
