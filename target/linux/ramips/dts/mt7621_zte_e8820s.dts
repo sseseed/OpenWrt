@@ -8,10 +8,10 @@
 	model = "ZTE E8820S";
 
 	aliases {
-		led-boot = &led_sys;
-		led-failsafe = &led_sys;
-		led-running = &led_sys;
-		led-upgrade = &led_sys;
+		led-boot = &led_system;
+		led-failsafe = &led_system;
+		led-running = &led_system;
+		led-upgrade = &led_system;
 		label-mac-device = &gmac0;
 	};
 
@@ -22,8 +22,8 @@
 	leds {
 		compatible = "gpio-leds";
 
-		led_sys: sys {
-			label = "white:sys";
+		led_system: system {
+			label = "white:system";
 			gpios = <&gpio 3 GPIO_ACTIVE_LOW>;
 		};
 
