@@ -1499,15 +1499,31 @@ define Device/planex_vr500
 endef
 TARGET_DEVICES += planex_vr500
 
-define Device/zte_e8820s
+define Device/zte_e8820s-spi
   $(Device/dsa-migration)
   IMAGE_SIZE := 16064k
   DEVICE_VENDOR := RAISECOM
-  DEVICE_MODEL := E8820S
+  DEVICE_VENDOR := ZTE
+  DEVICE_MODEL := E8820S-SPI
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 \
           kmod-usb-ledtrig-usbport wpad-basic
 endef
-TARGET_DEVICES += zte_e8820s
+TARGET_DEVICES += zte_e8820s-spi
+
+define Device/zte_e8820s-nand
+  $(Device/dsa-migration)
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  KERNEL_SIZE := 4096k
+  UBINIZE_OPTS := -E 5
+  IMAGE_SIZE := 120320k
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+  DEVICE_VENDOR := ZTE
+  DEVICE_MODEL := E8820S-Nand
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 \
+          kmod-usb-ledtrig-usbport wpad-basic
+endef
+TARGET_DEVICES += zte_e8820s-nand
 
 define Device/raisecom_msg1500
   $(Device/dsa-migration)
