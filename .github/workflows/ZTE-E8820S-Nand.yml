@@ -9,7 +9,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 # https://github.com/hackyes/OpenWrt-CI
 
-name: ZTE-E8820S
+name: ZTE-E8820S-Nand
 # ZTE-E8820S MT7621，16M+256M
 on:
   push:
@@ -107,7 +107,7 @@ jobs:
       - name: Costom configure file
         run: |
           rm .config
-          mv ZTE-E8820S.config .config
+          mv ZTE-E8820S-Nand.config .config
           #echo aaaaaa
           #cat .config
           #echo aaaaaa
