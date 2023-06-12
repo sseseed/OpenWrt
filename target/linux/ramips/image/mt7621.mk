@@ -1518,6 +1518,8 @@ define Device/zte_e8820s-nand
   UBINIZE_OPTS := -E 5
   IMAGE_SIZE := 120320k
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+  IMAGE/factory.bin := append-kernel | pad-to $(KERNEL_SIZE) | append-ubi | \
+        check-size
   DEVICE_VENDOR := ZTE
   DEVICE_MODEL := E8820S-Nand
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 \
