@@ -80,7 +80,6 @@
 
 &pcie {
 	status = "okay";
-	pinctrl-0 = <&pcie_pins>, <&uart3_gpio>;
 	reset-gpios = <&gpio 19 GPIO_ACTIVE_LOW>,
 		      <&gpio 7 GPIO_ACTIVE_LOW>;
 };
@@ -145,7 +144,7 @@
 
 &state_default {
 	gpio {
-		groups = "i2c", "jtag", "uart2",  "wdt";
+		groups = "i2c", "jtag", "uart2", "uart3",  "wdt";
 		function = "gpio";
 	};
 };
