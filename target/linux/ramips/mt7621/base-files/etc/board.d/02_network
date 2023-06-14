@@ -212,6 +212,16 @@ ramips_setup_macs()
 		wan_mac=$(macaddr_add "$lan_mac" 1)
 		label_mac=$lan_mac
 		;;
+	zte,e8820s-spi)
+		label_mac=$(mtd_get_mac_binary factory 0x4)
+		lan_mac=$label_mac
+		wan_mac=$(macaddr_add "$lan_mac" 1)
+		;;
+	zte,e8820s-nand)
+		label_mac=$(mtd_get_mac_binary factory 0x4)
+		lan_mac=$label_mac
+		wan_mac=$(macaddr_add "$lan_mac" 1)
+		;;
 	raisecom,msg1500-switch)
 		label_mac=$(mtd_get_mac_binary factory 0x4)
 		lan_mac=$label_mac
