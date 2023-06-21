@@ -23,7 +23,7 @@
 		compatible = "gpio-leds";
 
 		led_system: system {
-			label = "green:system";
+			label = "white:system";
 			gpios = <&gpio 3 GPIO_ACTIVE_LOW>;
 		};
 	};
