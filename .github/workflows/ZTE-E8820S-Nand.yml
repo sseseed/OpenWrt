@@ -60,10 +60,12 @@ jobs:
           #设置 Run LED 默认闪烁
           echo "	set system.Run_Led='led'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           echo "	set system.Run_Led.name='Run_Led'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
-          echo "	set system.Run_Led.sysfs='green:system'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "	set system.Run_Led.sysfs='white:system'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           echo "	set system.Run_Led.trigger='timer'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           echo "	set system.Run_Led.delayon='750'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           echo "	set system.Run_Led.delayoff='750'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          #修改重置时闪灯
+          sed -i "s/green:system/white:system/" home/runner/work/OpenWrt/OpenWrt/package/base-files/files/etc/rc.button/reset
           
           #初始化防火墙配置，启用硬件转发
           echo "	set firewall.@defaults[-1].flow_offloading='1'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
