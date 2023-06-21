@@ -58,8 +58,8 @@ jobs:
           echo "	add_list network.lan.dns='180.76.76.76'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           
           #初始化防火墙配置，启用硬件转发
-          echo "	uci set firewall.@defaults[-1].flow_offloading='1'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
-          echo "	uci set firewall.@defaults[-1].flow_offloading_hw='1'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "	set firewall.@defaults[-1].flow_offloading='1'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "	set firewall.@defaults[-1].flow_offloading_hw='1'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           
           echo "EOF" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           #应用设置
