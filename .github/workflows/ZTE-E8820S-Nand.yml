@@ -63,7 +63,8 @@ jobs:
           echo "	set system.Run_Led.sysfs='white:system'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           echo "	set system.Run_Led.trigger='timer'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           echo "	set system.Run_Led.delayon='750'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
-          echo "	set system.Run_Led.delayoff='750'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "	set system.Run_Led.delatyoff='750'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          
           #修改重置时闪灯
           #sed -i "s/green:system/white:system/" /home/runner/work/OpenWrt/OpenWrt/package/base-files/files/etc/rc.button/reset
           
@@ -104,7 +105,8 @@ jobs:
           #popd
       - name: Update feeds
         run: |
-         cat /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+         #cat /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+         find -name config_generate
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           #在 Luci 语言选择项上加上中文
