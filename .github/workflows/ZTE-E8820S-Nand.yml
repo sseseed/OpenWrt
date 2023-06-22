@@ -39,8 +39,7 @@ jobs:
           sudo -E apt-get clean
       - name: Download Openwrt
         run: |
-          pwd
-          exit 1
+          
           #git clone https://github.com/openwrt/openwrt/tree/v22.03.2
           wget https://github.com/openwrt/openwrt/archive/refs/tags/v22.03.4.tar.gz
           tar -zxvf v22.03.4.tar.gz
@@ -107,6 +106,8 @@ jobs:
           #popd
       - name: Update feeds
         run: |
+          cat /home/runner/work/OpenWrt/OpenWrt/package/base-files/files/bin/config_generate
+          exit 1
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           #在 Luci 语言选择项上加上中文
