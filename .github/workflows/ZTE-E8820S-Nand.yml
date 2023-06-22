@@ -104,6 +104,7 @@ jobs:
           #popd
       - name: Update feeds
         run: |
+         cat /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           #在 Luci 语言选择项上加上中文
