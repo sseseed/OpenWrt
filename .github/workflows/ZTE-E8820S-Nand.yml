@@ -107,7 +107,6 @@ jobs:
       - name: Update feeds
         run: |
           cat /home/runner/work/OpenWrt/OpenWrt/package/base-files/files/bin/config_generate
-          exit 1
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           #在 Luci 语言选择项上加上中文
