@@ -6,14 +6,35 @@
 #include <dt-bindings/input/input.h>
 
 / {
-	compatible = "raisecom,msg230-acn-xdi", "qca,qca9561";
-	model = "Raisecom MSG230-ACN-XDI";
+	compatible = "Raisecom,MSG230-CAN-XDI", "qca,qca9531";
+	model = " Raisecom,MSG230-CAN-XDI ";
 
 	aliases {
 		led-boot = &led_system;
-		led-failsafe = &led_system;
-		led-running = &led_system;
-		led-upgrade = &led_system;
+		led-failsafe = &led_ system;
+		led-running = &led_ system;
+		led-upgrade = &led_ system;
+		label-mac-device = &eth1;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+
+		wifi {
+			label = "green:wlan";
+			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
+			linux,default-trigger = "phy0tpt";
+		};
+
+		wan_green {
+			label = "green:wan";
+			gpios = <&gpio 3 GPIO_ACTIVE_LOW>;
+		};
+
+		wan_red {
+			label = "red:wan";
+			gpios = <&gpio 4 GPIO_ACTIVE_LOW>;
+		};
 	};
 
 	keys {
@@ -23,18 +44,24 @@
 			label = "Reset button";
 			linux,code = <KEY_RESTART>;
 			gpios = <&gpio 1 GPIO_ACTIVE_LOW>;
+			debounce-interval = <60>;
 		};
 	};
+};
 
-	leds {
-		compatible = "gpio-leds";
+&usb0 {
+	#address-cells = <1>;
+	#size-cells = <0>;
+	status = "okay";
 
-		led_system: power {
-			label = "led_system";
-			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
-			default-state = "on";
-		};
+	hub_port: port@1 {
+		reg = <1>;
+		#trigger-source-cells = <0>;
 	};
+};
+
+&usb_phy {
+	status = "okay";
 };
 
 &spi {
@@ -50,20 +77,15 @@
 			#address-cells = <1>;
 			#size-cells = <1>;
 
-			partition@0 {
+			uboot: partition@0 {
 				label = "u-boot";
-				reg = <0x000000 0x040000>;
+				reg = <0x000000 0x020000>;
 				read-only;
 			};
 
-			partition@40000 {
-				label = "u-boot-env";
-				reg = <0x040000 0x010000>;
-			};
-
-			nor_firmware: partition@50000 {
-				label = "nor_firmware";
-				reg = <0x050000 0xfa0000>;
+			partition@20000 {
+				label = "firmware";
+				reg = <0x020000 0xfd0000>;
 			};
 
 			art: partition@ff0000 {
@@ -75,41 +97,39 @@
 	};
 };
 
-&pcie {
-	status = "okay";
-};
-
 &eth0 {
 	status = "okay";
 
 	phy-handle = <&swphy4>;
 
-	nvmem-cells = <&macaddr_info_8>;
+	nvmem-cells = <& macaddr_art_0>;
 	nvmem-cell-names = "mac-address";
+	mac-address-increment = <1>;
 };
 
 &eth1 {
-	status = "okay";
-
-	nvmem-cells = <&macaddr_info_8>;
+	nvmem-cells = <& macaddr_art_6 >;
 	nvmem-cell-names = "mac-address";
-	mac-address-increment = <1>;
 };
 
 &wmac {
 	status = "okay";
 
 	mtd-cal-data = <&art 0x1000>;
-	nvmem-cells = <&macaddr_info_8>;
+	nvmem-cells = <& macaddr_art_0>;
 	nvmem-cell-names = "mac-address";
 };
 
-&info {
+&art {
 	compatible = "nvmem-cells";
 	#address-cells = <1>;
 	#size-cells = <1>;
 
-	macaddr_info_8: macaddr@8 {
-		reg = <0x8 0x6>;
+	macaddr_art_0: macaddr@0 {
+		reg = <0x0 0x6>;
+	};
+
+	macaddr_art_6: macaddr@6 {
+		reg = <0x6 0x6>;
 	};
 };
