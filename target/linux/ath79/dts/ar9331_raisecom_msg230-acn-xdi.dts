@@ -10,10 +10,10 @@
 	model = " Raisecom,MSG230-ACN-XDI ";
 
 	aliases {
-		led-boot = &led_system;
-		led-failsafe = &led_ system;
-		led-running = &led_ system;
-		led-upgrade = &led_ system;
+		led-boot = &wifi;
+		led-failsafe = &wifi;
+		led-running = &wifi;
+		led-upgrade = &wifi;
 		label-mac-device = &eth1;
 	};
 
