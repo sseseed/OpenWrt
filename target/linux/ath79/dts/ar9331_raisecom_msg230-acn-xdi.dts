@@ -14,7 +14,6 @@
 		led-failsafe = &led_system;
 		led-running = &led_system;
 		led-upgrade = &led_system;
-		label-mac-device = &eth1;
 	};
 
 	leds {
@@ -35,6 +34,77 @@
 			label = "red:wan";
 			gpios = <&gpio 4 GPIO_ACTIVE_LOW>;
 		};
+
+		GPIO0 {
+			label = "GPIO0";
+			gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
+		};
+
+		GPIO2 {
+			label = "GPIO2";
+			gpios = <&gpio 2 GPIO_ACTIVE_LOW>;
+		};
+
+		GPIO5 {
+			label = "GPIO5";
+			gpios = <&gpio 5 GPIO_ACTIVE_LOW>;
+		};
+
+		GPIO6 {
+			label = "GPIO6";
+			gpios = <&gpio 6 GPIO_ACTIVE_LOW>;
+		};
+
+		GPIO7 {
+			label = "GPIO7";
+			gpios = <&gpio 7 GPIO_ACTIVE_LOW>;
+		};
+
+		GPIO8 {
+			label = "GPIO8";
+			gpios = <&gpio 8 GPIO_ACTIVE_LOW>;
+		};
+
+		GPIO9 {
+			label = "GPIO9";
+			gpios = <&gpio 9 GPIO_ACTIVE_LOW>;
+		};
+
+		GPIO10 {
+			label = "GPIO10";
+			gpios = <&gpio 10 GPIO_ACTIVE_LOW>;
+		};
+
+		GPIO11 {
+			label = "GPIO11";
+			gpios = <&gpio 11 GPIO_ACTIVE_LOW>;
+		};
+
+		GPIO13 {
+			label = "GPIO13";
+			gpios = <&gpio 13 GPIO_ACTIVE_LOW>;
+		};
+
+		GPIO14 {
+			label = "GPIO14";
+			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
+		};
+
+		GPIO15 {
+			label = "GPIO15";
+			gpios = <&gpio 15 GPIO_ACTIVE_LOW>;
+		};
+
+		GPIO16 {
+			label = "GPIO16";
+			gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
+		};
+
+		GPIO17 {
+			label = "GPIO17";
+			gpios = <&gpio 17 GPIO_ACTIVE_LOW>;
+		};
+
 	};
 
 	keys {
@@ -79,34 +149,23 @@
 
 			partition@0 {
 				label = "u-boot";
-				reg = <0x000000 0x020000>;
+				reg = <0x000000 0x040000>;
 				read-only;
 			};
 
-			partition@20000 {
-				label = "kernel";
-				reg = <0x020000 0x300000>;
-			};
-
-			partition@20000 {
-				label = "rootfs";
-				reg = <0x320000 0xCD0000>;
-			};
-
-			art: partition@ff0000 {
+			art: partition@400000 {
 				label = "art";
-				reg = <0xff0000 0x010000>;
+				reg = <0x040000 0x010000>;
 				read-only;
 			};
 
-			partition@20000 {
+			partition@50000 {
 				label = "firmware";
-				reg = <0x020000 0xFD0000>;
+				reg = <0x050000 0xFB0000>;
 			};
 		};
 	};
 };
-
 
 &eth0 {
 	status = "okay";
