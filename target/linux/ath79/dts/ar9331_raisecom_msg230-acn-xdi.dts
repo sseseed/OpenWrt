@@ -10,17 +10,17 @@
 	model = " Raisecom,MSG230-ACN-XDI ";
 
 	aliases {
-		led-boot = &wifi;
-		led-failsafe = &wifi;
-		led-running = &wifi;
-		led-upgrade = &wifi;
+		led-boot = &led_system;
+		led-failsafe = &led_system;
+		led-running = &led_system;
+		led-upgrade = &led_system;
 		label-mac-device = &eth1;
 	};
 
 	leds {
 		compatible = "gpio-leds";
 
-		wifi {
+		led_system:wifi {
 			label = "green:wlan";
 			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
 			linux,default-trigger = "phy0tpt";
