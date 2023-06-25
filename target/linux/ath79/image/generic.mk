@@ -2716,7 +2716,7 @@ define Device/raisecom_msg230-acn-xdi
   DEVICE_PACKAGES := kmod-usb2 kmod-usb-ledtrig-usbport \
 	kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9887-ct \
 	-swconfig -uboot-envtools
-  IMAGE_SIZE := 16192k
+  IMAGE_SIZE := 15872k
   SUPPORTED_DEVICES += raisecom_msg230-acn-xdi
 endef
 TARGET_DEVICES += raisecom_msg230-acn-xdi
