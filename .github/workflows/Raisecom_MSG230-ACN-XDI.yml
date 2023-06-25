@@ -117,7 +117,7 @@ jobs:
       - name: Costom configure file
         run: |
           rm .config
-          mv Raisecom_MSG230-CAN-XDI.config .config
+          mv Raisecom_MSG230-ACN-XDI.config .config
           #echo aaaaaa
           #cat .config
           #echo aaaaaa
