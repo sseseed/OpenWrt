@@ -2709,14 +2709,14 @@ define Device/zyxel_nbg6616
 endef
 TARGET_DEVICES += zyxel_nbg6616
 
-define Device/raisecom_msg230-can-xdi
+define Device/raisecom_msg230-acn-xdi
   SOC := ar9331
   DEVICE_VENDOR := Raisecom
-  DEVICE_MODEL := MSG230-CAN-XDI
+  DEVICE_MODEL := MSG230-ACN-XDI
   DEVICE_PACKAGES := kmod-usb2 kmod-usb-ledtrig-usbport \
 	kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9887-ct \
 	-swconfig -uboot-envtools
   IMAGE_SIZE := 16192k
-  SUPPORTED_DEVICES += raisecom_msg230-can-xdi
+  SUPPORTED_DEVICES += raisecom_msg230-acn-xdi
 endef
-TARGET_DEVICES += raisecom_msg230-can-xdi
+TARGET_DEVICES += raisecom_msg230-acn-xdi
