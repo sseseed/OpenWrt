@@ -8,7 +8,7 @@ ath79_setup_interfaces()
 	local board="$1"
 
 	case "$board" in
-	raisecom,msg230-can-xdi)
+	raisecom,msg230-acn-xdi)
 		ucidef_add_switch "switch0" \
 			"0@eth0" "1:lan" "2:lan" "3:lan" "4:lan" "5:wan" "6@eth1"
 		;;
