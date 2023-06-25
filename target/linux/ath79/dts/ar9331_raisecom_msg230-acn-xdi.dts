@@ -6,8 +6,8 @@
 #include <dt-bindings/input/input.h>
 
 / {
-	compatible = "Raisecom,MSG230-CAN-XDI", "qca,qca9531";
-	model = " Raisecom,MSG230-CAN-XDI ";
+	compatible = "Raisecom,MSG230-ACN-XDI", "qca,qca9531";
+	model = " Raisecom,MSG230-ACN-XDI ";
 
 	aliases {
 		led-boot = &led_system;
