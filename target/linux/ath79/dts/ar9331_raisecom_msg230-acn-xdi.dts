@@ -84,15 +84,24 @@
 			};
 
 			partition@20000 {
-				compatible = "denx,uimage";
-				label = "firmware";
-				reg = <0x030000 0xfD0000>;
+				label = "kernel";
+				reg = <0x020000 0x300000>;
+			};
+
+			partition@20000 {
+				label = "rootfs";
+				reg = <0x320000 0xCD0000>;
 			};
 
 			art: partition@ff0000 {
 				label = "art";
 				reg = <0xff0000 0x010000>;
 				read-only;
+			};
+
+			partition@20000 {
+				label = "firmware";
+				reg = <0x020000 0xFD0000>;
 			};
 		};
 	};
