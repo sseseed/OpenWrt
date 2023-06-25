@@ -9,8 +9,8 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 # https://github.com/hackyes/OpenWrt-CI
 
-name: Raisecom_MSG230-CAN-XDI
-# ZTE-E8820S MT7621，16M+256M
+name: Raisecom_MSG230-ACN-XDI
+#  Raisecom_MSG230-ACN-XDI QCA9531+QCA9887，16M+128M
 on:
   push:
     branches: 
