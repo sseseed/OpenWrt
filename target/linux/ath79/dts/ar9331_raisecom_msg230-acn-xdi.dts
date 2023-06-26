@@ -74,11 +74,6 @@
 			gpios = <&gpio 8 GPIO_ACTIVE_LOW>;
 		};
 
-		GPIO10 {
-			label = "GPIO10";
-			gpios = <&gpio 10 GPIO_ACTIVE_LOW>;
-		};
-
 		GPIO13 {
 			label = "GPIO13";
 			gpios = <&gpio 13 GPIO_ACTIVE_LOW>;
