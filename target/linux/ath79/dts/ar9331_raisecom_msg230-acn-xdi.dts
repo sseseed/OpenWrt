@@ -35,6 +35,15 @@
 			gpios = <&gpio 4 GPIO_ACTIVE_LOW>;
 		};
 
+		lan_green {
+			label = "green:lan";
+			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
+		};
+
+		lan_red {
+			label = "red:lan";
+			gpios = <&gpio 11 GPIO_ACTIVE_LOW>;
+		};
 		GPIO0 {
 			label = "GPIO0";
 			gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
@@ -75,19 +84,9 @@
 			gpios = <&gpio 10 GPIO_ACTIVE_LOW>;
 		};
 
-		GPIO11 {
-			label = "GPIO11";
-			gpios = <&gpio 11 GPIO_ACTIVE_LOW>;
-		};
-
 		GPIO13 {
 			label = "GPIO13";
 			gpios = <&gpio 13 GPIO_ACTIVE_LOW>;
-		};
-
-		GPIO14 {
-			label = "GPIO14";
-			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
 		};
 
 		GPIO15 {
