@@ -51,19 +51,19 @@
 			gpios = <&gpio 11 GPIO_ACTIVE_LOW>;
 		};
 
-		GPIO0 {
-			label = "GPIO0";
-			gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
+		GPIO6 {
+			label = "GPIO6";
+			gpios = <&gpio 6 GPIO_ACTIVE_LOW>;
 		};
 
-		GPIO2 {
-			label = "GPIO2";
-			gpios = <&gpio 2 GPIO_ACTIVE_LOW>;
+		GPIO7 {
+			label = "GPIO7";
+			gpios = <&gpio 7 GPIO_ACTIVE_LOW>;
 		};
 
-		GPIO5 {
-			label = "GPIO16";
-			gpios = <&gpio 5 GPIO_ACTIVE_LOW>;
+		GPIO8 {
+			label = "GPIO8";
+			gpios = <&gpio 8 GPIO_ACTIVE_LOW>;
 		};
 	};
 
