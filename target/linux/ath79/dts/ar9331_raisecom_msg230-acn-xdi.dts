@@ -159,7 +159,7 @@
 			};
 
 			partition@50000 {
-				compatible = "denx,uimage"
+				compatible = "denx,uimage";
 				label = "firmware";
 				reg = <0x050000 0xfb0000>;
 				read-only;
