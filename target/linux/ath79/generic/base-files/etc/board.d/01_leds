@@ -11,9 +11,8 @@ raisecom,msg230-acn-xdi)
 	ucidef_set_led_netdev "lan_data" "LAN_DATA" "red:lan" "eth0" "tx rx"
 	ucidef_set_led_netdev "wan_link" "WAN_LINK" "green:wan" "eth1" "link"
 	ucidef_set_led_netdev "wan_data" "WAN_DATA" "red:wan" "eth1" "tx rx"
-	ucidef_set_led_rssi "wlan_link" "WLAN_LINK" "green:wlan" "wlan0" "1" "100"
+	ucidef_set_led_rssi "wlan_link" "WLAN_LINK" "green:wlan" "wlan1" "1" "100"
 	;;
-
 8dev,carambola2)
 	ucidef_set_led_netdev "lan" "LAN" "orange:eth0" "eth0"
 	ucidef_set_led_switch "wan" "WAN" "orange:eth1" "switch0" "0x04"
