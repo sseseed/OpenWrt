@@ -45,34 +45,24 @@
 			gpios = <&gpio 11 GPIO_ACTIVE_LOW>;
 		};
 
-		GPIO0 {
-			label = "GPIO0";
-			gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
+		GPIO13 {
+			label = "GPIO13";
+			gpios = <&gpio 13 GPIO_ACTIVE_LOW>;
 		};
 
-		GPIO2 {
-			label = "GPIO2";
-			gpios = <&gpio 2 GPIO_ACTIVE_LOW>;
+		GPIO15 {
+			label = "GPIO15";
+			gpios = <&gpio 15 GPIO_ACTIVE_LOW>;
 		};
 
-		GPIO5 {
-			label = "GPIO5";
-			gpios = <&gpio 5 GPIO_ACTIVE_LOW>;
+		GPIO16 {
+			label = "GPIO16";
+			gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
 		};
 
-		GPIO6 {
-			label = "GPIO6";
-			gpios = <&gpio 6 GPIO_ACTIVE_LOW>;
-		};
-
-		GPIO7 {
-			label = "GPIO7";
-			gpios = <&gpio 7 GPIO_ACTIVE_LOW>;
-		};
-
-		GPIO8 {
-			label = "GPIO8";
-			gpios = <&gpio 8 GPIO_ACTIVE_LOW>;
+		GPIO17 {
+			label = "GPIO17";
+			gpios = <&gpio 17 GPIO_ACTIVE_LOW>;
 		};
 	};
 
