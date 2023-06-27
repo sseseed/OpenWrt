@@ -527,6 +527,11 @@ ath79_setup_macs()
 	local board="$1"
 
 	case "$board" in
+	Raisecom,MSG230-ACN-XDI)
+		label_mac=$(mtd_get_mac_binary art 0x0)
+		lan_mac=$label_mac
+		wan_mac=$(macaddr_add "$lan_mac" 1)
+		;;
 	adtran,bsap1800-v2|\
 	adtran,bsap1840)
 		lan_mac=$(mtd_get_mac_binary "Board data" 2)
