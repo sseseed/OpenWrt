@@ -6,11 +6,6 @@
 . /lib/functions/k2t.sh
 
 board=$(board_name)
-echo "11-ath10k-caldata aaaaaaaaaa"
-echo $(board_name)
-echo "aaaaaaaaaa"
-echo "$FIRMWARE"
-echo "aaaaaaaaaa"
 case "$FIRMWARE" in
 "ath10k/cal-pci-0000:00:00.0.bin")
 	case $board in
