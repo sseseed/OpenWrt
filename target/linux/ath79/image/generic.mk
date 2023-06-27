@@ -2714,7 +2714,7 @@ define Device/raisecom_msg230-acn-xdi
   DEVICE_VENDOR := Raisecom
   DEVICE_MODEL := MSG230-ACN-XDI
   DEVICE_PACKAGES := kmod-usb2 kmod-usb-ledtrig-usbport \
-	kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9887-ct \
+	kmod-ath10k kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9887-ct \
 	-swconfig -uboot-envtools
   IMAGE_SIZE := 16064k
   IMAGE/sysupgrade.bin := $$(IMAGE/default) | check-size | append-metadata
