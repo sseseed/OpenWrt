@@ -4,11 +4,8 @@
 board_config_update
 
 board=$(board_name)
-echo "01_leds aaaaaaaaaa"
-echo $(board_name)
-echo "aaaaaaaaaa"
 case "$board" in
-raisecom,msg230-acn-xdi)
+Raisecom,MSG230-ACN-XDI)
 	ucidef_set_led_netdev "lan_link" "LAN_LINK" "green:lan" "eth0" "link"
 	ucidef_set_led_netdev "lan_data" "LAN_DATA" "red:lan" "eth0" "tx rx"
 	ucidef_set_led_netdev "wan_link" "WAN_LINK" "green:wan" "eth1" "link"
