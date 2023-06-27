@@ -8,7 +8,7 @@ case "$board" in
 Raisecom,MSG230-ACN-XDI)
 	ucidef_set_led_switch "lan_link" "LAN_LINK" "green:lan" "switch0" "0x10" "" "link"
 	ucidef_set_led_switch "wan_link" "WAN_LINK" "green:wan" "switch0" "0x20" "" "link"
-	ucidef_set_led_netdev "wan_data" "WAN_DATA" "red:lan" "eth0" "rx"
+	ucidef_set_led_netdev "lan_data" "LAN_DATA" "red:lan" "eth0" "rx"
 	ucidef_set_led_netdev "wan_data" "WAN_DATA" "red:wan" "eth1" "rx"
 	;;
 8dev,carambola2)
