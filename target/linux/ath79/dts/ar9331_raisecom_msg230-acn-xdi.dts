@@ -122,17 +122,15 @@
 
 &eth0 {
 	status = "okay";
-
 	phy-handle = <&swphy4>;
-
 	nvmem-cells = <&macaddr_art_0>;
 	nvmem-cell-names = "mac-address";
-	mac-address-increment = <1>;
 };
 
 &eth1 {
 	nvmem-cells = <&macaddr_art_6 >;
 	nvmem-cell-names = "mac-address";
+	mac-address-increment = <1>;
 };
 
 &wmac {
