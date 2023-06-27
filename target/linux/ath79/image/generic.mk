@@ -2717,9 +2717,7 @@ define Device/raisecom_msg230-acn-xdi
 	ath10k-firmware-qca9887 ath10k-board-qca9887 kmod-ath10k \
 	-swconfig -uboot-envtools
   IMAGE_SIZE := 16064k
-  IMAGES += factory.bin
-  IMAGE/factory.bin := append-kernel | pad-to $$$$(BLOCKSIZE) | \
-	append-rootfs | pad-rootfs | pad-to 64k | check-size | zyxel-ras-image
+  IMAGE/sysupgrade.bin := $$(IMAGE/default) | check-size | append-metadata
   SUPPORTED_DEVICES += raisecom_msg230-acn-xdi
 endef
 TARGET_DEVICES += raisecom_msg230-acn-xdi
