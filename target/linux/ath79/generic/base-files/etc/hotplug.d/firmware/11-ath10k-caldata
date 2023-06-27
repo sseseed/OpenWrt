@@ -14,7 +14,7 @@ echo "aaaaaaaaaa"
 case "$FIRMWARE" in
 "ath10k/cal-pci-0000:00:00.0.bin")
 	case $board in
-	raisecom,msg230-acn-xdi|\
+	Raisecom,MSG230-ACN-XDI|\
 	allnet,all-wap02860ac|\
 	araknis,an-500-ap-i-ac|\
 	araknis,an-700-ap-i-ac|\
@@ -179,7 +179,6 @@ case "$FIRMWARE" in
 	;;
 "ath10k/cal-pci-0000:01:00.0.bin")
 	case $board in
-	raisecom,msg230-acn-xdi|\
 	openmesh,om5p-ac-v1)
 		caldata_extract "ART" 0x5000 0x844
 		ath10k_patch_mac $(macaddr_add $(cat /sys/class/net/eth0/address) +2)
@@ -192,7 +191,6 @@ case "$FIRMWARE" in
 	;;
 "ath10k/pre-cal-pci-0000:00:00.0.bin")
 	case $board in
-	raisecom,msg230-acn-xdi|\
 	comfast,cf-e313ac)
 		caldata_extract "art" 0x5000 0x2f20
 		ath10k_patch_mac $(mtd_get_mac_binary art 0x6)
