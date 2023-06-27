@@ -6,10 +6,10 @@ board_config_update
 board=$(board_name)
 case "$board" in
 Raisecom,MSG230-ACN-XDI)
-	ucidef_set_led_netdev "lan_link" "LAN_LINK" "green:lan" "eth0" "link"
-	ucidef_set_led_netdev "lan_data" "LAN_DATA" "red:lan" "eth0" "tx rx"
-	ucidef_set_led_netdev "wan_link" "WAN_LINK" "green:wan" "eth1" "link"
-	ucidef_set_led_netdev "wan_data" "WAN_DATA" "red:wan" "eth1" "tx rx"
+	ucidef_set_led_switch "lan_link" "LAN_LINK" "green:lan" "switch0" "0x10" "" "link"
+	ucidef_set_led_switch "wan_link" "WAN_LINK" "green:wan" "switch0" "0x20" "" "link"
+	ucidef_set_led_netdev "wan_data" "WAN_DATA" "red:lan" "eth0" "rx"
+	ucidef_set_led_netdev "wan_data" "WAN_DATA" "red:wan" "eth1" "rx"
 	;;
 8dev,carambola2)
 	ucidef_set_led_netdev "lan" "LAN" "orange:eth0" "eth0"
