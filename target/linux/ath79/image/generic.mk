@@ -2714,9 +2714,12 @@ define Device/raisecom_msg230-acn-xdi
   DEVICE_VENDOR := Raisecom
   DEVICE_MODEL := MSG230-ACN-XDI
   DEVICE_PACKAGES := kmod-usb2 kmod-usb-ledtrig-usbport \
-	kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9887-ct \
+	ath10k-firmware-qca9887 ath10k-board-qca9887 kmod-ath10k \
 	-swconfig -uboot-envtools
   IMAGE_SIZE := 16064k
+  IMAGES += factory.bin
+  IMAGE/factory.bin := append-kernel | pad-to $$$$(BLOCKSIZE) | \
+	append-rootfs | pad-rootfs | pad-to 64k | check-size | zyxel-ras-image
   SUPPORTED_DEVICES += raisecom_msg230-acn-xdi
 endef
 TARGET_DEVICES += raisecom_msg230-acn-xdi
