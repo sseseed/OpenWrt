@@ -4,7 +4,7 @@
 board_config_update
 
 board=$(board_name)
-echo "aaaaaaaaaa"
+echo "01_leds aaaaaaaaaa"
 echo $(board_name)
 echo "aaaaaaaaaa"
 case "$board" in
