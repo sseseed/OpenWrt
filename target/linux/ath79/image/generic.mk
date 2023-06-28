@@ -2715,7 +2715,6 @@ define Device/raisecom_msg230-acn-xdi
   DEVICE_MODEL := MSG230-ACN-XDI
   DEVICE_PACKAGES := kmod-usb2 kmod-ath10k-ct ath10k-firmware-qca9887-ct
   IMAGE_SIZE := 16064k
-  IMAGE/sysupgrade.bin := $$(IMAGE/default) | check-size | append-metadata
   SUPPORTED_DEVICES += raisecom_msg230-acn-xdi
 endef
 TARGET_DEVICES += raisecom_msg230-acn-xdi
