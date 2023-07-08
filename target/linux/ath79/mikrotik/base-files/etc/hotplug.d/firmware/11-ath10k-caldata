@@ -11,7 +11,7 @@ board=$(board_name)
 case "$FIRMWARE" in
 "ath10k/cal-pci-0000:00:00.0.bin")
 	case $board in
-Raisecom,MSG230-ACN-XDI|\
+	Raisecom,MSG230-ACN-XDI|\
 	raisecom,msg230-acn-xdi|\
 	mikrotik,routerboard-921gs-5hpacd-15s|\
 	mikrotik,routerboard-951ui-2nd|\
