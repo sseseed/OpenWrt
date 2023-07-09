@@ -188,12 +188,6 @@ case "$FIRMWARE" in
 	Raisecom,MSG230-ACN-XDI|\
 	raisecom,msg230-acn-xdi)
 		caldata_extract "art" 0x5000 0x844
-		ln -sf /lib/firmware/ath10k/pre-cal-pci-0000\:00\:00.0.bin \
-			/lib/firmware/ath10k/QCA9888/hw2.0/board.bin
-		rm /lib/firmware/ath10k/QCA9888/hw2.0/board-2.bin
-		ln -sf /lib/firmware/ath10k/pre-cal-pci-0000\:00\:00.0.bin \
-			/lib/firmware/ath10k/QCA9887/hw1.0/board.bin
-		rm /lib/firmware/ath10k/QCA9887/hw1.0/board-2.bin
 		;;
 	comfast,cf-e313ac)
 		caldata_extract "art" 0x5000 0x2f20
