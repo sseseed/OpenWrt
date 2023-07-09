@@ -66,11 +66,6 @@
 
 &pcie0 {
 	status = "okay";
-
-	wifi@0,0 {
-		compatible = "pci168c,0050";
-		reg = <0x0000 0 0 0 0>;
-	};
 };
 
 &usb0 {
@@ -107,15 +102,21 @@
 			};
 
 			art: partition@40000 {
-				label = "art";
+				label = "u-boot-env";
 				reg = <0x040000 0x010000>;
 			};
 
 			partition@50000 {
 				compatible = "denx,uimage";
 				label = "firmware";
-				reg = <0x050000 0xfb0000>;
+				reg = <0x050000 0xfa0000>;
 			};
+			
+			art: partition@ff0000 {
+				label = "art";
+				reg = <0xff0000 0x010000>;
+			};
+
 		};
 	};
 };
@@ -135,10 +136,7 @@
 
 &wmac {
 	status = "okay";
-
 	mtd-cal-data = <&art 0x1000>;
-	nvmem-cells = <&macaddr_art_0>;
-	nvmem-cell-names = "mac-address";
 };
 
 &art {
