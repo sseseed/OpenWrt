@@ -17,7 +17,7 @@ case "$FIRMWARE" in
 	engenius,eap1200h|\
 	engenius,enstationac-v1|\
 	glinet,gl-x750)
-		caldata_sysfsload_from_file $wlan_data 0x5000 0x844
+		caldata_extract "art" 0x5000 0x844
 		ath10k_patch_mac $(macaddr_add $(mtd_get_mac_binary art 0x0) 2)
 		;;
 	asus,rp-ac66|\
@@ -189,7 +189,8 @@ case "$FIRMWARE" in
 	case $board in
 	Raisecom,MSG230-ACN-XDI|\
 	raisecom,msg230-acn-xdi)
-		caldata_sysfsload_from_file $wlan_data 0x5000 0x844
+		caldata_extract "art" 0x5000 0x844
+		ath10k_patch_mac $(macaddr_add $(mtd_get_mac_binary art 0x0) 2)
 		;;
 	comfast,cf-e313ac)
 		caldata_extract "art" 0x5000 0x2f20
