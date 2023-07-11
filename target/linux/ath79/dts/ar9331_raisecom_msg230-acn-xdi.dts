@@ -109,7 +109,12 @@
 			partition@50000 {
 				compatible = "denx,uimage";
 				label = "firmware";
-				reg = <0x050000 0xfb0000>;
+				reg = <0x050000 0xfa0000>;
+			};
+
+			EEPROM: partition@ff0000 {
+				label = "EEPROM";
+				reg = <0xff0000 0x010000>;
 			};
 		};
 	};
