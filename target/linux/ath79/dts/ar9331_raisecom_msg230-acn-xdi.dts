@@ -22,13 +22,11 @@
 		led_system:system {
 			label = "green:system";
 			gpios = <&gpio 13 GPIO_ACTIVE_LOW>;
-			linux,default-trigger = "phy0tpt";
 		};
 
 		wifi {
 			label = "green:wlan";
 			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
-			linux,default-trigger = "phy0tpt";
 		};
 
 		wan_green {
@@ -109,17 +107,7 @@
 			partition@50000 {
 				compatible = "denx,uimage";
 				label = "firmware";
-				reg = <0x050000 0xf90000>;
-			};
-
-			eeprom: partition@fe0000 {
-				label = "eeprom";
-				reg = <0xfe0000 0x010000>;
-			};
-
-			EEPROM: partition@ff0000 {
-				label = "EEPROM";
-				reg = <0xff0000 0x010000>;
+				reg = <0x050000 0xfb0000>;
 			};
 		};
 	};
