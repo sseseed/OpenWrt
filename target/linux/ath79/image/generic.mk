@@ -2669,11 +2669,11 @@ endef
 TARGET_DEVICES += zyxel_nbg6616
 
 define Device/raisecom_msg230-acn-xdi
-  SOC := ar9331
+  SOC := qca9531
   DEVICE_VENDOR := Raisecom
   DEVICE_MODEL := MSG230-ACN-XDI
-  DEVICE_PACKAGES := kmod-usb2 kmod-ath10k ath10k-firmware-qca9887
+  DEVICE_PACKAGES := kmod-usb2 kmod-ath10k-ct ath10k-firmware-qca9887-ct
   IMAGE_SIZE := 16064k
-  SUPPORTED_DEVICES += raisecom_msg230-acn-xdi
+  SUPPORTED_DEVICES += msg230-acn-xdi
 endef
 TARGET_DEVICES += raisecom_msg230-acn-xdi
