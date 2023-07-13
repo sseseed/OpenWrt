@@ -69,6 +69,7 @@
 		compatible = "qcom,ath10k";
 		reg = <0 0 0 0 0>;
 		device_type = "pci";
+		mtd-cal-data = <&art 0x5000>;
 	};
 };
 
