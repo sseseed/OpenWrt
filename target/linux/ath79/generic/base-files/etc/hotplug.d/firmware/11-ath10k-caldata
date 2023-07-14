@@ -16,8 +16,6 @@ echo "******************************" > /dev/ttyS0
 case "$FIRMWARE" in
 "ath10k/cal-pci-0000:00:00.0.bin")
 	case $board in
-	Raisecom,MSG230-ACN-XDI|\
-	raisecom,msg230-acn-xdi|\
 	allnet,all-wap02860ac|\
 	araknis,an-500-ap-i-ac|\
 	araknis,an-700-ap-i-ac|\
@@ -194,13 +192,13 @@ case "$FIRMWARE" in
 	;;
 "ath10k/pre-cal-pci-0000:00:00.0.bin")
 	case $board in
-	Raisecom,MSG230-ACN-XDI|\
-	raisecom,msg230-acn-xdi)
+	Raisecom,MSG230-ACN-XDI)
+		echo "***** ath10k/pre-cal-pci-0000:00:00.0.bin,Raisecom,MSG230-ACN-XDI"   > /dev/ttyS0
 		caldata_extract "art" 0x5000 0x844
 		ath10k_patch_mac $(macaddr_add $(mtd_get_mac_binary art 0x0) 2)
+		rm /lib/firmware/ath10k/QCA9887/hw1.0/board-2.bin		
 		ln -sf /lib/firmware/ath10k/pre-cal-pci-0000\:00\:00.0.bin \
-			/lib/firmware/ath10k/QCA9887/hw1.0/board.bin
-		rm /lib/firmware/ath10k/QCA9887/hw1.0/board-2.bin
+			/lib/firmware/ath10k/QCA9887/hw1.0/board-2.bin
 		;;
 	comfast,cf-e313ac)
 		caldata_extract "art" 0x5000 0x2f20
