@@ -5,6 +5,11 @@
 . /lib/functions/caldata.sh
 . /lib/functions/k2t.sh
 
+echo "******************************board" > /dev/ttyS0
+echo "$board" > /dev/ttyS0
+echo "******************************FIRMWARE" > /dev/ttyS0
+echo "$FIRMWARE" > /dev/ttyS0
+echo "******************************" > /dev/ttyS0
 board=$(board_name)
 case "$FIRMWARE" in
 "ath10k/cal-pci-0000:00:00.0.bin")
