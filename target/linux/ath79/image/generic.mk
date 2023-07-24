@@ -2672,7 +2672,7 @@ define Device/raisecom_msg230-acn-xdi
   SOC := qca9531
   DEVICE_VENDOR := Raisecom
   DEVICE_MODEL := MSG230-ACN-XDI
-  DEVICE_PACKAGES := kmod-usb2 kmod-ath10k ath10k-firmware-qca9887
+  DEVICE_PACKAGES := kmod-usb2 kmod-ath10k-ct ath10k-firmware-qca9887-ct
   IMAGE_SIZE := 16064k
   SUPPORTED_DEVICES += msg230-acn-xdi
 endef
