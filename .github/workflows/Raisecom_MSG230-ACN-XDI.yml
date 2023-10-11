@@ -41,51 +41,51 @@ jobs:
         run: |
           
           #git clone https://github.com/openwrt/openwrt/tree/v22.03.2
-          wget https://github.com/openwrt/openwrt/archive/refs/tags/v22.03.4.tar.gz
-          tar -zxvf v22.03.4.tar.gz
+          wget https://github.com/openwrt/openwrt/archive/refs/tags/v22.03.5.tar.gz
+          tar -zxvf v22.03.5.tar.gz
           
           #先删除最后一行的 uci commit
-          sed -i "s/uci commit//" /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
-          echo "uci -q batch <<-EOF" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          sed -i "s/uci commit//" /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.5/package/base-files/files/bin/config_generate
+          echo "uci -q batch <<-EOF" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.5/package/base-files/files/bin/config_generate
           #设置时区
-          echo "	set system.@system[-1].zonename='Asia/Shanghai'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
-          echo "	set system.@system[-1].timezone='CST-8'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "	set system.@system[-1].zonename='Asia/Shanghai'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.5/package/base-files/files/bin/config_generate
+          echo "	set system.@system[-1].timezone='CST-8'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.5/package/base-files/files/bin/config_generate
 
           #设置 NTP 对时服务器、DNS 服务器
-          echo "	delete system.ntp.server" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
-          echo "	add_list system.ntp.server='ntp1.aliyun.com'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
-          echo "	add_list system.ntp.server='time2.cloud.tencent.com'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
-          echo "	set network.lan.dns='223.6.6.6'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
-          echo "	add_list network.lan.dns='180.76.76.76'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "	delete system.ntp.server" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.5/package/base-files/files/bin/config_generate
+          echo "	add_list system.ntp.server='ntp1.aliyun.com'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.5/package/base-files/files/bin/config_generate
+          echo "	add_list system.ntp.server='time2.cloud.tencent.com'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.5/package/base-files/files/bin/config_generate
+          echo "	set network.lan.dns='223.6.6.6'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.5/package/base-files/files/bin/config_generate
+          echo "	add_list network.lan.dns='180.76.76.76'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.5/package/base-files/files/bin/config_generate
           
           #设置 Run LED 默认闪烁
-          echo "	set system.Run_Led='led'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
-          echo "	set system.Run_Led.name='Run_Led'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
-          echo "	set system.Run_Led.sysfs='green:system'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
-          echo "	set system.Run_Led.trigger='timer'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
-          echo "	set system.Run_Led.delayon='750'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
-          echo "	set system.Run_Led.delayoff='750'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "	set system.Run_Led='led'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.5/package/base-files/files/bin/config_generate
+          echo "	set system.Run_Led.name='Run_Led'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.5/package/base-files/files/bin/config_generate
+          echo "	set system.Run_Led.sysfs='green:system'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.5/package/base-files/files/bin/config_generate
+          echo "	set system.Run_Led.trigger='timer'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.5/package/base-files/files/bin/config_generate
+          echo "	set system.Run_Led.delayon='750'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.5/package/base-files/files/bin/config_generate
+          echo "	set system.Run_Led.delayoff='750'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.5/package/base-files/files/bin/config_generate
           
           #修改重置时闪灯
           #sed -i "s/green:system/white:system/" /home/runner/work/OpenWrt/OpenWrt/package/base-files/files/etc/rc.button/reset
           
           #初始化防火墙配置，启用硬件转发
-          #echo "	set firewall.@defaults[-1].flow_offloading='1'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
-          #echo "	set firewall.@defaults[-1].flow_offloading_hw='1'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          #echo "	set firewall.@defaults[-1].flow_offloading='1'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.5/package/base-files/files/bin/config_generate
+          #echo "	set firewall.@defaults[-1].flow_offloading_hw='1'" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.5/package/base-files/files/bin/config_generate
           
-          echo "EOF" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "EOF" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.5/package/base-files/files/bin/config_generate
           
           #应用设置
-          echo "uci commit" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package/base-files/files/bin/config_generate
+          echo "uci commit" >> /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.5/package/base-files/files/bin/config_generate
           
-          cp -r /home/runner/work/OpenWrt/OpenWrt/target/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/target
-          cp -r /home/runner/work/OpenWrt/OpenWrt/package/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.4/package
+          cp -r /home/runner/work/OpenWrt/OpenWrt/target/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.5/target
+          cp -r /home/runner/work/OpenWrt/OpenWrt/package/* /home/runner/work/OpenWrt/OpenWrt/openwrt-22.03.5/package
           
           rm -rf target
           rm -rf package
           rm -rf build_dir
-          cp .config ./openwrt-22.03.4
-          mv ./openwrt-22.03.4/* ./
+          cp .config ./openwrt-22.03.5
+          mv ./openwrt-22.03.5/* ./
           #修改 root 密码为 GL-FE-AProot
           #sed -i 's/root::0:0:99999:7:::/root:$1$k4M.ZHV1$rzEKCtrJEYPr0qwH..pzl\/:19103:0:99999:7:::/' ./package/base-files/files/etc/shadow
       #- name: Install Helloword
