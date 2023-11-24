@@ -97,6 +97,7 @@ ramips_setup_interfaces()
 		ucidef_set_interfaces_lan_wan "eth1 eth2 eth3 eth4 eth5" "eth0"
 		;;
 	raisecom,msg1500-switch|\
+	skspruce,ac8210-switch|\
 	ubnt,usw-flex)
 		ucidef_set_interface_lan "lan1 lan2 lan3 lan4 lan5"
 		;;
@@ -222,7 +223,8 @@ ramips_setup_macs()
 		lan_mac=$label_mac
 		wan_mac=$(macaddr_add "$lan_mac" 1)
 		;;
-	raisecom,msg1500-switch)
+	raisecom,msg1500-switch|\
+	skspruce,ac8210-switch)
 		label_mac=$(mtd_get_mac_binary factory 0x4)
 		lan_mac=$label_mac
 		;;
