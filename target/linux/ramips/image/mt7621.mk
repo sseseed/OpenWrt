@@ -1547,6 +1547,16 @@ define Device/raisecom_msg1500-switch
 endef
 TARGET_DEVICES += raisecom_msg1500-switch
 
+define Device/skspruce_ac8210-switch
+  $(Device/dsa-migration)
+  IMAGE_SIZE := 16064k
+  DEVICE_VENDOR := RAISECOM
+  DEVICE_MODEL := AC8210-switch
+  DEVICE_PACKAGES := kmod-usb2 \
+	kmod-usb-ledtrig-usbport
+endef
+TARGET_DEVICES += skspruce_ac8210-switch
+
 define Device/raisecom_msg1500-x-00
   $(Device/dsa-migration)
   $(Device/uimage-lzma-loader)
