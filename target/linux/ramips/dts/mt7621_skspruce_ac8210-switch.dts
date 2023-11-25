@@ -10,9 +10,9 @@
 	model = "Skspruce AC8210-switch";
 
 	aliases {
-		led-boot = &led_usb;
-		led-failsafe = &led_usb;
-		led-upgrade = &led_usb;
+		led-boot = &led_sys;
+		led-failsafe = &led_sys;
+		led-upgrade = &led_sys;
 	};
 
 	chosen {
