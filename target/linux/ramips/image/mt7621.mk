@@ -1552,8 +1552,6 @@ define Device/skspruce_ac8210-switch
   IMAGE_SIZE := 16064k
   DEVICE_VENDOR := RAISECOM
   DEVICE_MODEL := AC8210-switch
-  DEVICE_PACKAGES := kmod-usb2 \
-	kmod-usb-ledtrig-usbport
 endef
 TARGET_DEVICES += skspruce_ac8210-switch
 
