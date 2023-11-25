@@ -10,9 +10,9 @@
 	model = "Skspruce AC8210-switch";
 
 	aliases {
-		led-boot = &led_sys;
-		led-failsafe = &led_sys;
-		led-upgrade = &led_sys;
+		led-boot = &led_usb;
+		led-failsafe = &led_usb;
+		led-upgrade = &led_usb;
 	};
 
 	chosen {
@@ -22,8 +22,8 @@
 	leds {
 		compatible = "gpio-leds";
 				
-		led_sys {
-			label = "green:sys";
+		led_usb: usb {
+			label = "green:usb";
 			gpios = <&gpio 3 GPIO_ACTIVE_LOW>;
 		};
 	};
